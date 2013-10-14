@@ -5,6 +5,10 @@ function fader() {
 $(function(){
 	// var $signin_button = $('#signin-button');
 	// $signin_button.on("click", function(){this.fadeIn(2000)});
+	$('#login').on('click', function(e) {
+		e.preventDefault();
+		$('#darth-fader').fadeIn(2000);
+	});
 
 	$('#sign-in-form').on('submit', function(){
 		
@@ -20,7 +24,17 @@ $(function(){
 		})
 		.done(function(data){
 			if (data['success']){
-				$('body').css({'backgroundColor': 'green'});
+				$('#darth-fader').fadeOut(2000);
+				console.log(data);
+				$div = $('<div>');
+				$img = $('<img src=' + data['gravatar'] + '/>');
+				$div.append($img);
+				$div.append('Logged in as <strong>' + data['email'] + '</strong>.')
+				$('#user_nav').prepend($div);
+				$('#login').remove();
+				$('#signup').remove();
+				$('#logout').fadeIn(2000);
+				$('#edit-profile').fadeIn(2000);
 			}
 			else{
 				$('body').css({'backgroundColor': 'red'});
