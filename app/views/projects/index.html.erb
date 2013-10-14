@@ -1,3 +1,21 @@
-Hello AndrewMadden.com
 
-<%= link_to "reg", new_user_registration_path %>
+<div class= "title_page">
+	<h1>Worlds, Witches, Roger and Good Old Fashioned Time Travel</h1>
+
+<div>
+
+<div id="screen">
+	
+</div>
+
+<div class= 'comments'>
+	<table>
+		<% @comments.each do |comment| %>
+		<tr>
+			<%= comment.the_comment %> created by <%= comment.user_id %>
+		</tr>
+		<% end %>
+	</table>
+
+	<input type="text" id="comment_text"/><button id="add_comment">Add Comment</button>
+</div>

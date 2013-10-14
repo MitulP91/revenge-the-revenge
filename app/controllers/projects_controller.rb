@@ -2,7 +2,14 @@ class ProjectsController < ApplicationController
 
 	 def index
 
-
+	 	@comments = Comment.all
+	 	@comment = Comment.new
 	 end
 
-end
+	 def create
+	 	
+
+	end
+
+
+end	
