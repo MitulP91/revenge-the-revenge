@@ -8,19 +8,35 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 </head>
-<body>
+<body id='sexy-body'>
 	<div id= 'container'>
 		<div id= 'user_nav'>
 			<% if user_signed_in? %>
-				<%= image_tag avatar_url(current_user) %>
 				Logged in as <strong><%= current_user.email %></strong>.
 				<%= link_to 'Edit Profile', edit_user_registration_path %>
 				<%= link_to 'Logout', destroy_user_session_path, method: :delete %>
 			<% else %>
 				<%= link_to 'Sign up', new_user_registration_path %>
-				<%= link_to 'Login', new_user_session_path %>
+<!-- 				<button id="signin-button" type= "submit">Sign In</button> -->
 			<% end %>
 		</div>
+
+
+
+
+		<div id="darth-fader">
+
+			<h2>Sign in</h2>
+
+			<form id='sign-in-form'>
+				<input type='text_field' id='user_email' autofocus>
+				<input type='password' id='user_password'>
+  				<input type='submit' value="Sign in" />
+			</form>	
+
+
+		</div>
+
 
 		<% flash.each do |name,msg| %>
 			<%= content_tag :div, msg, id: 'flash_#{name}' %>
