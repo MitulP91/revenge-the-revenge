@@ -1,4 +1,6 @@
-<%= current_user.email %>
+<% if current_user %>
+	<%= current_user.email %>
+<% end %>
 
 <%= link_to "signup", new_user_registration_path %>
 <%= link_to "signin", new_user_session_path %>
