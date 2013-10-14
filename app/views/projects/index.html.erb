@@ -1,1 +1,22 @@
+<!-- Header -->
+<div class= "title_page">
+	<h1>Worlds, Witches, Roger and Good Old Fashioned Time Travel</h1>
+<div>
+
+<!-- Main Canvas Screen -->
+<div id="screen"></div>
+
+<!-- Comment Input -->
 <input type="text" id="comment-text"/><button id="add-comment">Add Comment</button>
+
+<!-- Comments -->
+<div class= 'comments'>
+	<table>
+		<% @comments.each do |comment| %>
+		<tr>
+			<%= comment.the_comment %> created by <%= comment.user_id %>
+		</tr>
+		<% end %>
+	</table>
+</div>
+

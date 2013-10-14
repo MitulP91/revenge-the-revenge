@@ -1,7 +1,8 @@
 class ProjectsController < ApplicationController
 
 	def index
-
+		@comments = Comment.all
+	 	@comment = Comment.new
 	end
 
 	def create
@@ -13,4 +14,4 @@ class ProjectsController < ApplicationController
 			render :json => false
 		end	
 	end
-end
+end	
