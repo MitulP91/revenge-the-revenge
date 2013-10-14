@@ -7,16 +7,14 @@
 <div id="screen"></div>
 
 <!-- Comment Input -->
-<input type="text" id="comment-text"/><button id="add-comment">Add Comment</button>
+<% if current_user %>
+	<input type="text" id="comment-text"/><button id="add-comment">Add Comment</button>
+<% end %>
 
 <!-- Comments -->
-<div class= 'comments'>
-	<table>
-		<% @comments.each do |comment| %>
-		<tr>
-			<%= comment.the_comment %> created by <%= comment.user_id %>
-		</tr>
-		<% end %>
-	</table>
-</div>
-
+<ul id="comments">
+	<% @comments.each do |comment| %>
+	<% user = User.find_by_id(comment.user_id).email %>
+		<li><%= "#{comment.the_comment} created by #{user}" %></li>
+	<% end %>
+</ul>
