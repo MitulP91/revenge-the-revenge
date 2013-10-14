@@ -1,3 +1,4 @@
+
 # require 'spec_helper'
 
 # describe User do
@@ -6,3 +7,4 @@
 # 		@password = 'isthebest'
 # 	end
 # end
+
