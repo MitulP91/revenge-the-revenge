@@ -41,7 +41,7 @@ $(function(){
 			else{
 				$('body').css({'backgroundColor': 'red'});
 			}
-		});
+		})
 		.fail(function(){
 			$('body').css({'backgroundColor': 'red'});
 		});
