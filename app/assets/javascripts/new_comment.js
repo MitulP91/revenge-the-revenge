@@ -6,8 +6,10 @@ $(document).ready(function() {
 	      type: 'POST',
 	      dataType: 'json',
 	      data: {comment: {the_comment: $comment_text.val()}}
-	    }).done(function() {
+	    }).done(function(data) {
 	    	$comment_text.val('');
+			$comment = $('<li>' + data['comment'] + ' created by ' + data['email'] + '</li>')	    	
+	    	$('#comments').prepend($comment);
 	    })
 	});
 });
