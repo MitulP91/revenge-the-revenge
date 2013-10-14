@@ -1,0 +1,20 @@
+<!-- Header -->
+<div class= "title_page">
+	<h1>Worlds, Witches, Roger and Good Old Fashioned Time Travel</h1>
+<div>
+
+<!-- Main Canvas Screen -->
+<div id="screen"></div>
+
+<!-- Comment Input -->
+<% if current_user %>
+	<input type="text" id="comment-text"/><button id="add-comment">Add Comment</button>
+<% end %>
+
+<!-- Comments -->
+<ul id="comments">
+	<% @comments.each do |comment| %>
+	<% user = User.find_by_id(comment.user_id).email %>
+		<li><%= "#{comment.the_comment} created by #{user}" %></li>
+	<% end %>
+</ul>
