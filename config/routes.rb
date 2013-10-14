@@ -1,13 +1,9 @@
 AndrewmaddenCom::Application.routes.draw do
 
   devise_for :users
-<<<<<<< HEAD
-  post '/comment/create' => 'projects#create'
-=======
 
   post '/comment/create' => 'projects#create'
 
->>>>>>> cceaddca2a4a942895c24103a0db77ec90c9928b
   root to: 'projects#index'
 
 
