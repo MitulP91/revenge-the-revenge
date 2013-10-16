@@ -36,7 +36,8 @@ game.PlayerEntity = me.ObjectEntity.extend({
 
         // Set Default Animation
         this.renderable.setCurrentAnimation("walk");
-        this.updateColRect(10, 35, -1, 55);
+        this.updateColRect(1, 28, -1, 55);
+        // this.updateColRect(1, 40, -1, 55);
 	},
 
 	update: function() {
@@ -55,7 +56,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
             this.collisionBox.width = 100;
             if(this.collisionBox.width > 40) {
                 // this.collisionBox.width -= 60;
-                this.updateColRect(60, 35, -1, 55);
+                this.updateColRect(70, 28, -1, 55);
             }
 
             this.walk_direction = true;
@@ -76,7 +77,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
             this.collisionBox.width = 100;
             if(this.collisionBox.width > 40) {
                 // this.collisionBox.width -= 60;
-                this.updateColRect(10, 35, -1, 55);
+                this.updateColRect(1, 28, -1, 55);
             }
 
             this.walk_direction = false;
