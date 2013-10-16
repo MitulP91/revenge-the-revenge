@@ -4,7 +4,9 @@ var game = {
 	// Object to Store Score
 	data : {
 		// score
-		score : 0
+		score : 0,
+        hp : 3,
+        startTime: 0
 	},
 	
     // Run on Page Load

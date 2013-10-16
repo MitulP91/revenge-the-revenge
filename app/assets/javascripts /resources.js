@@ -27,6 +27,7 @@ game.resources = [
 
     // Game Font
     {name: "32x32_font",    type:"image", src: "/assets/font/32x32_font.png"},
+    {name: "atascii",    type:"image", src: "/assets/font/atascii_24px.png"},
 
     // Bullet Sprite
     {name: "bullet",    type:"image", src: "/assets/sprite/bullet.png"},

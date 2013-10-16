@@ -9,6 +9,8 @@ game.PlayScreen = me.ScreenObject.extend({
 
 		// Reset the Score
 		game.data.score = 0;
+		game.data.hp = 3;
+		game.data.startTime = me.timer.getTime();
 		
 		// Add HUD to Game World
 		me.game.add(new game.HUD.Container());
@@ -19,6 +21,10 @@ game.PlayScreen = me.ScreenObject.extend({
 	onDestroyEvent: function() {
 		// remove the HUD from the game world
 		// me.game.world.removeChild(me.game.world.getEntityByProp("name", "HUD")[0]);
+
+		// End Time
+		endTime = (me.timer.getTime() - game.data.startTime)/1000;
+		console.log(endTime);
 
 		// Stop BG Music
 		me.audio.stopTrack();
