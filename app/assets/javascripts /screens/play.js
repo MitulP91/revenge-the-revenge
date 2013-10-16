@@ -5,7 +5,7 @@ game.PlayScreen = me.ScreenObject.extend({
 		// me.audio.playTrack("DST-InertExponent");
 
 		// Load Level 1
-		me.levelDirector.loadLevel('someword')
+		me.levelDirector.loadLevel('someword');
 
 		// Reset the Score
 		game.data.score = 0;
@@ -24,7 +24,6 @@ game.PlayScreen = me.ScreenObject.extend({
 
 		// End Time
 		endTime = (me.timer.getTime() - game.data.startTime)/1000;
-		console.log(endTime);
 
 		// Stop BG Music
 		me.audio.stopTrack();

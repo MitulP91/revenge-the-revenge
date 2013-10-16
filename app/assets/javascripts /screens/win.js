@@ -1,4 +1,4 @@
-game.TitleScreen = me.ScreenObject.extend({
+game.WinScreen = me.ScreenObject.extend({
 	// Constructor
 	init: function() {
 		this.parent(true);
@@ -9,7 +9,7 @@ game.TitleScreen = me.ScreenObject.extend({
 		this.scrollerfont = null;
 		this.scrollertween = null;
 
-		this.scroller = 'MITUL PATEL MADE A GAME BUT CASSIE CREATED THE GREATEST WALL ';
+		this.scroller = 'YOU WIN   		';
 		this.scrollpos = 600;
 	},
 
@@ -17,7 +17,7 @@ game.TitleScreen = me.ScreenObject.extend({
 		// If null, initialize the variables
 		if(this.title == null) {
 			// Initialize background image
-			this.title = me.loader.getImage("Time_Travel_Watch");
+			this.title = me.loader.getImage('Time_Travel_Watch');
 
 			// Initialize font
 			this.font = new me.BitmapFont('32x32_font', 32);
@@ -53,7 +53,7 @@ game.TitleScreen = me.ScreenObject.extend({
 	update: function() {
 		// If pressed
 		if(me.input.isKeyPressed('enter')) {
-			me.state.change(me.state.STORY);
+			me.state.change(me.state.MENU);
 		}
 		return true;
 	},
@@ -61,7 +61,9 @@ game.TitleScreen = me.ScreenObject.extend({
 	draw: function(context) {
 		context.drawImage(this.title, 0, 0);
 
-		this.font.draw(context, "PRESS ENTER TO PLAY", 20, 240);
+		this.font.draw(context, "CONGRATULATIONS!", 180, 210);
+		this.font.draw(context, "YOU WON!", 100, 300);
+		this.font.draw(context, "SCORE: " + game.data.score, 180, 350);
 		this.scrollerfont.draw(context, this.scroller, this.scrollerpos, 440);
 	},
 
