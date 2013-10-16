@@ -158,22 +158,22 @@
   </data>
  </layer>
  <objectgroup name="EnemyEntities" width="40" height="15">
-  <object name="EnemyEntity" x="64" y="128" width="128" height="32">
+  <object name="EnemyEntity2" x="64" y="128" width="128" height="32">
    <properties>
     <property name="spritewidth" value="32"/>
    </properties>
   </object>
-  <object name="EnemyEntity" x="448" y="192" width="128" height="32">
+  <object name="EnemyEntity2" x="448" y="192" width="128" height="32">
    <properties>
     <property name="spritewidth" value="32"/>
    </properties>
   </object>
-  <object name="EnemyEntity" x="448" y="384" width="544" height="32">
+  <object name="EnemyEntity2" x="448" y="384" width="544" height="32">
    <properties>
     <property name="spritewidth" value="32"/>
    </properties>
   </object>
-  <object name="EnemyEntity" x="1056" y="384" width="128" height="32">
+  <object name="EnemyEntity2" x="1056" y="384" width="128" height="32">
    <properties>
     <property name="spritewidth" value="32"/>
    </properties>

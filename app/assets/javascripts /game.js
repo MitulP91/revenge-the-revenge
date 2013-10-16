@@ -58,6 +58,7 @@ var game = {
         me.entityPool.add("mainPlayer", game.PlayerEntity);
         me.entityPool.add("CoinEntity", game.CoinEntity);
         me.entityPool.add("EnemyEntity", game.EnemyEntity);
+        me.entityPool.add("EnemyEntity2", game.EnemyEntity2);
         // me.entityPool.add("level2", game.LevelEntity);
 
         // Enable Keyboard Bindings
