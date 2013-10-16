@@ -18,6 +18,7 @@ game.resources = [
 
     // Title Screen Background
     {name: "title_screen",         type:"image", src: "/assets/gui/title_screen.png"},
+    {name: "Time_Travel_Watch",         type:"image", src: "/assets/gui/Time_Travel_Watch.png"},
 
     // Spinning Coin Spritesheet
     {name: "spinning_coin_gold",  type:"image", src: "/assets/sprite/spinning_coin_gold.png"},

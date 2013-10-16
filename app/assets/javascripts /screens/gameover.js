@@ -17,7 +17,7 @@ game.EndScreen = me.ScreenObject.extend({
 		// If null, initialize the variables
 		if(this.title == null) {
 			// Initialize background image
-			this.title = me.loader.getImage('title_screen');
+			this.title = me.loader.getImage('Time_Travel_Watch');
 
 			// Initialize font
 			this.font = new me.BitmapFont('32x32_font', 32);
