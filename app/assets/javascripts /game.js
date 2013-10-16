@@ -1,47 +1,43 @@
-
-/* Game namespace */
+// Game Namespace
 var game = {
 
-	// an object where to store game information
+	// Object to Store Score
 	data : {
 		// score
 		score : 0
 	},
 	
-    // Run on page load.
+    // Run on Page Load
     "onload" : function () {
-        // Initialize the video.
+        // Initialize the HTML5 Canvas Video
         if (!me.video.init("screen", 640, 480, true, 'auto')) {
             alert("Your browser does not support HTML5 canvas.");
             return;
         }
 		
-		// add "#debug" to the URL to enable the debug Panel
+		// Add #Debug Capabilities (Remove for Production)
 		if (document.location.hash === "#debug") {
 			window.onReady(function () {
 				me.plugin.register.defer(debugPanel, "debug");
 			});
 		}
 
-        // Render Debug Hitbox
-        // me.debug.renderHitBox = true;
-
         // Initialize the audio.
         // me.audio.init("mp3,ogg");
 
-        // Set a callback to run when loading is complete.
+        // Set a Callback for when Loading is Complete
         me.loader.onload = this.loaded.bind(this);
      
-        // Load the resources.
+        // Load the Resources.
         me.loader.preload(game.resources);
 
-        // Initialize melonJS and display a loading screen.
+        // Initialize MelonJS and Display a Loading Screen.
         me.state.change(me.state.LOADING);
     },
 
 
 
-    // Run on game resources loaded.
+    // Run when Game Resources Loaded
     "loaded" : function () {
         // Set the Title Screen Object
         me.state.set(me.state.MENU, new game.TitleScreen());
@@ -59,14 +55,16 @@ var game = {
         me.entityPool.add("mainPlayer", game.PlayerEntity);
         me.entityPool.add("CoinEntity", game.CoinEntity);
         me.entityPool.add("EnemyEntity", game.EnemyEntity);
+        // me.entityPool.add("levelTwo", game.LevelEntity);
 
         // Enable Keyboard Bindings
         me.input.bindKey(me.input.KEY.LEFT,  "left");
         me.input.bindKey(me.input.KEY.RIGHT, "right");
         me.input.bindKey(me.input.KEY.X,     "jump", true);
         me.input.bindKey(me.input.KEY.Z,     "shoot", true);
+        me.input.bindKey(me.input.KEY.C,     "melee", true);
 
-        // Start the Game.
+        // Start the Game
         me.state.change(me.state.MENU);
     }
 };

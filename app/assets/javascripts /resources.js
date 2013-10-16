@@ -4,23 +4,30 @@ game.resources = [
 	 * @example
 	 * {name: "example", type:"image", src: "data/img/example.png"},
 	 */
-	 // area01 tileset
+	 // Area01 Tileset
 	{name: "build_atlas",  type:"image", src: "/assets/map/build_atlas.png"},
 
-	// meta tileset
+	// Meta Tileset
 	{name: "metatiles32x32",  type:"image", src: "/assets/map/metatiles32x32.png"},
-    // the main player spritesheet
-    {name: "gripe_run_right",     type:"image", src: "/assets/sprite/gripe_run_right.png"},
-    // the parallax background
+
+    // Main Player Spritesheet
+    {name: "main-player",     type:"image", src: "/assets/sprite/main-player.png"},
+
+    // Parallax Backgrounds
     {name: "great_wall_2",  type:"image", src: "/assets/great_wall_2.png"},
+
     // Title Screen Background
     {name: "title_screen",         type:"image", src: "/assets/gui/title_screen.png"},
-    // the spinning coin spritesheet
+
+    // Spinning Coin Spritesheet
     {name: "spinning_coin_gold",  type:"image", src: "/assets/sprite/spinning_coin_gold.png"},
-    // our enemty entity
+
+    // Enemy Entities
     {name: "dragonenemy",      type:"image", src: "/assets/sprite/dragonenemy.png"},
-    // game font
+
+    // Game Font
     {name: "32x32_font",    type:"image", src: "/assets/font/32x32_font.png"},
+
     // Bullet Sprite
     {name: "bullet",    type:"image", src: "/assets/sprite/bullet.png"},
 	
