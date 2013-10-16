@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require melonJS-0.9.9-min.js
+//= require game.js
 //= require_tree .
-
