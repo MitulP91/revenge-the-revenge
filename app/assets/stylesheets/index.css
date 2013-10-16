@@ -31,3 +31,21 @@ body {
 	image-rendering: optimize-contrast;
 	-ms-interpolation-mode: nearest-neighbor;
 }
+
+#scrollContainer {
+    height : 400px;
+    width : 400px;
+    overflow : hidden;
+}
+
+p {
+    margin-bottom : 8px;
+}
+
+p.dimmed {
+    opacity : 0.5;
+}
+p.highlighted {
+    opacity : 1;
+    background-color : #CCDDFF;
+}
