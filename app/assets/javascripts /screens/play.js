@@ -1,7 +1,5 @@
 game.PlayScreen = me.ScreenObject.extend({
-	/**	
-	 *  action to perform on state change
-	 */
+	// On State Change
 	onResetEvent: function() {	
 		// Play BG Music
 		// me.audio.playTrack("DST-InertExponent");
@@ -9,20 +7,24 @@ game.PlayScreen = me.ScreenObject.extend({
 		// Load Level 1
 		me.levelDirector.loadLevel('someword')
 
-		// reset the score
+		// Reset the Score
 		game.data.score = 0;
+		game.data.hp = 3;
+		game.data.startTime = me.timer.getTime();
 		
-		// add our HUD to the game world	
-		// game.HUD.add(new game.HUD.Container());
+		// Add HUD to Game World
+		me.game.add(new game.HUD.Container());
 	},
 	
 	
-	/**	
-	 *  action to perform when leaving this screen (state change)
-	 */
+	// When Leaving Screen
 	onDestroyEvent: function() {
 		// remove the HUD from the game world
 		// me.game.world.removeChild(me.game.world.getEntityByProp("name", "HUD")[0]);
+
+		// End Time
+		endTime = (me.timer.getTime() - game.data.startTime)/1000;
+		console.log(endTime);
 
 		// Stop BG Music
 		me.audio.stopTrack();

@@ -1,12 +1,7 @@
-
-
-/**
- * a HUD container and child items
- */
-
+// Set the HUD
 game.HUD = game.HUD || {};
 
- 
+// Create Our HUD Container
 game.HUD.Container = me.ObjectContainer.extend({
 
 	init: function() {
@@ -26,54 +21,84 @@ game.HUD.Container = me.ObjectContainer.extend({
 		this.name = "HUD";
 		
 		// add our child score object at the top left corner
-		this.addChild(new game.HUD.ScoreItem(5, 5));
+		this.addChild(new game.HUD.ScoreItem(580, 410));
+		this.addChild(new game.HUD.HealthItem(200, 410));
 	}
 });
 
 
-/** 
- * a basic HUD item to display score
- */
+// Score HUD Item
 game.HUD.ScoreItem = me.Renderable.extend({	
-	/** 
-	 * constructor
-	 */
+	// Constructor
 	init: function(x, y) {
 		
-		// call the parent constructor 
-		// (size does not matter here)
+		// Constructor
 		this.parent(new me.Vector2d(x, y), 10, 10); 
 		
 		// Create Font
-		this.font = new me.BitmapFont("32x32_font", {x:24});
+		this.font = new me.BitmapFont("atascii", {x:24});
 		this.font.alignText = "bottom";
 		this.font.set("right", 1.6);
 
-		// local copy of the global score
+		// Local Copy of Global Score
 		this.score = -1;
 
-		// make sure we use screen coordinates
+		// Use Screen Coordinates
 		this.floating = true;
 	},
 	
-	/**
-	 * update function
-	 */
+	// Make Sure Score is Updated
 	update : function () {
 		// we don't draw anything fancy here, so just
 		// return true if the score has been updated
-		if (this.score !== game.data.score) {	
-			this.score = game.data.score;
+		if (this.score !== me.game.score) {	
+			this.score = me.game.score;
 			return true;
 		}
 		return false;
 	},
 
-	/**
-	 * draw the score
-	 */
+	// Draw Score onto the HUD
 	draw : function (context) {
-		this.font.draw (context, game.data.score, this.pos.x, this.pos.y);
+		this.font.draw (context, "SCORE:" + game.data.score, this.pos.x, this.pos.y);
+	}
+
+});
+
+// Score HUD Item
+game.HUD.HealthItem = me.Renderable.extend({	
+	// Constructor
+	init: function(x, y) {
+		
+		// Constructor
+		this.parent(new me.Vector2d(x, y), 10, 10); 
+		
+		// Create Font
+		this.font = new me.BitmapFont("atascii", {x:24});
+		this.font.alignText = "bottom";
+		this.font.set("right", 1.6);
+
+		// Local Copy of Global Score
+		this.hp = -1;
+
+		// Use Screen Coordinates
+		this.floating = true;
+	},
+	
+	// Make Sure Score is Updated
+	update : function () {
+		// we don't draw anything fancy here, so just
+		// return true if the score has been updated
+		if (this.hp !== me.game.hp) {	
+			this.hp = me.game.hp;
+			return true;
+		}
+		return false;
+	},
+
+	// Draw Score onto the HUD
+	draw : function (context) {
+		this.font.draw (context, "HP:" + game.data.hp, this.pos.x, this.pos.y);
 	}
 
 });
