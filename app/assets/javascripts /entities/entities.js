@@ -20,8 +20,8 @@ game.PlayerEntity = me.ObjectEntity.extend({
 		// Date of Last Bullet Shot
 		this.last_bullet_shot = me.timer.getTime();
 
-        // Date of Last Sword Swing
-        this.last_sword_swing = me.timer.getTime();
+        // Date of Last Melee
+        this.last_melee = me.timer.getTime();
 
 		// Store walking direction
 		this.walk_direction = false;
@@ -92,7 +92,6 @@ game.PlayerEntity = me.ObjectEntity.extend({
         if (me.input.isKeyPressed('jump')) {
             // Make Sure Jumping/Falling is not Already Occuring
             if (!this.jumping && !this.falling) {
-                
                	// Set Jump Velocity
                 this.vel.y = -this.maxVel.y * me.timer.tick;
                 
@@ -116,11 +115,11 @@ game.PlayerEntity = me.ObjectEntity.extend({
 
         // Set Action for Melee Attack
         if(me.input.isKeyPressed('melee')) {
-            if(me.timer.getTime() - this.last_sword_swing > 500) {
+            if(me.timer.getTime() - this.last_melee > 500) {
                 this.renderable.setCurrentAnimation('attack', 'walk');
-                var sword = new SwordEntity(this.pos.x, this.pos.y, this.walk_direction);
-                this.last_sword_swing = me.timer.getTime();
-                me.game.add(sword, this.z); 
+                var melee = new MeleeEntity(this.pos.x, this.pos.y, this.walk_direction);
+                this.last_melee = me.timer.getTime();
+                me.game.add(melee, this.z);
                 me.game.sort(); 
             } 
         }
@@ -157,9 +156,11 @@ game.PlayerEntity = me.ObjectEntity.extend({
 				  // Keep Track of HP Counter
 				  if(this.hp === 3) {
 				  	this.hp--;
+				  	game.data.hp--;
 				  	this.last_hp_loss = me.timer.getTime();
 				  } else if(me.timer.getTime() - this.last_hp_loss > 3000) {
 					this.hp--;
+					game.data.hp--;
 					this.last_hp_loss = me.timer.getTime();
 				  }
 
@@ -247,12 +248,25 @@ game.EnemyEntity = me.ObjectEntity.extend({
     onCollision: function(res, obj) {
         // When Collision Occurs on Top of Enemy
         if (this.alive && (res.y > 0) && obj.falling) {
-            this.hp--;
-            if(this.hp === 0) {
-            	me.game.remove(this);
-            } else {
-            	this.renderable.flicker(45);
-            }
+            this.hp -= 0.25;
+  			this.renderable.flicker(45);
+        }
+
+        // When Collision Occurs with SHOT Object
+        if(obj.type == 'SHOT') {
+        	this.hp -= 0.5;
+        	this.renderable.flicker(45);
+        }
+
+		// When Collision Occurs with MELEE Object
+        if(obj.type == 'MELEE') {
+        	this.hp--;
+        	this.renderable.flicker(45);
+        }
+
+        if(this.hp <= 0) {
+            me.game.remove(this);
+            game.data.score += 250;
         }
     },
  
@@ -350,7 +364,7 @@ var ShotEntity = me.ObjectEntity.extend({
 
         if(res) {
         	if(res.obj.type == me.game.ENEMY_OBJECT) {
-        		me.game.remove(res.obj);
+        		// me.game.remove(res.obj);
         		this.collidable = false;
         		me.game.remove(this);
         		return false;
@@ -365,7 +379,7 @@ var ShotEntity = me.ObjectEntity.extend({
 });
 
 // Create Melee Attack Entity
-var SwordEntity = me.ObjectEntity.extend({
+var MeleeEntity = me.ObjectEntity.extend({
     init: function(x, y, walkingLeft) {
     	// Custom Settings
         var settings = {};
@@ -391,7 +405,7 @@ var SwordEntity = me.ObjectEntity.extend({
         this.setVelocity(3, 1);
 
         // Give it a Type
-        this.type = 'SWORD';
+        this.type = 'MELEE';
     },
 
     update: function() {
@@ -414,7 +428,7 @@ var SwordEntity = me.ObjectEntity.extend({
         }
         
         // Limit Distance of Attack
-        if(this.pos.x > mainPlayer[0].pos.x + 45 || this.pos.x < mainPlayer[0].pos.x - 32) {
+        if(this.pos.x > mainPlayer[0].pos.x + 45 || this.pos.x < mainPlayer[0].pos.x - 45) {
             me.game.remove(this);
             return false;
         }
@@ -427,7 +441,7 @@ var SwordEntity = me.ObjectEntity.extend({
 
         if(res) {
             if(res.obj.type == me.game.ENEMY_OBJECT) {
-                me.game.remove(res.obj);
+                // me.game.remove(res.obj);
                 this.collidable = false;
                 me.game.remove(this);
                 return false;
