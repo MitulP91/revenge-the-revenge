@@ -26,12 +26,16 @@ game.PlayerEntity = me.ObjectEntity.extend({
 		// Store walking direction
 		this.walk_direction = false;
 
+        // melee variable
+        // this.melee_action = false;
+
 		// Set Type
 		this.type = 'PLAYER';
 
 		// Set Animations
         this.renderable.addAnimation('walk', [0,1,2]);
         this.renderable.addAnimation('attack', [3,4]);
+        // this.renderable.addAnimation('holster', [5]);
         this.renderable.addAnimation('jump', [6,7]);
 
         // Set Default Animation
@@ -117,11 +121,27 @@ game.PlayerEntity = me.ObjectEntity.extend({
         if(me.input.isKeyPressed('melee')) {
             if(me.timer.getTime() - this.last_melee > 500) {
                 this.renderable.setCurrentAnimation('attack', 'walk');
+                // this.melee_action = true;
+                // console.log(this.melee_action);
+                // (function(ma, obj) {
+                //     obj.melee_action = ma;
+                //     setTimeout(function() {
+                //         console.log("2" + ma);
+                //         obj.update();
+                //     }, 2000);
+                // })(this.melee_action, this);
+                // this.vel.x += 1;
+                // this.update();
+
+
+
+                
+
                 var melee = new MeleeEntity(this.pos.x, this.pos.y, this.walk_direction);
                 this.last_melee = me.timer.getTime();
                 me.game.add(melee, this.z);
-                me.game.sort(); 
-            } 
+                me.game.sort();
+            }
         }
 
         // Set Gameover if You Fall Through Bottom
@@ -214,8 +234,8 @@ game.CoinEntity = me.CollectableEntity.extend({
 game.EnemyEntity = me.ObjectEntity.extend({
 	init: function(x, y, settings) {
         // Define this Here Instead of Tiled
-        settings.image = "dragonenemy";
-        settings.spritewidth = 180;
+        settings.image = "ex-gf-enemy";
+        settings.spritewidth = 32;
  
         // Constructor
         this.parent(x, y, settings);

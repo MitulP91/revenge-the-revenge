@@ -9,7 +9,7 @@ game.TitleScreen = me.ScreenObject.extend({
 		this.scrollerfont = null;
 		this.scrollertween = null;
 
-		this.scroller = 'MITUL PATEL MADE A GAME BUT CASSIE CREATED THE GREATEST WALL ';
+		this.scroller = 'MITUL PATEL MADE A GAME BUT CASSIE CREATED THE GREATEST WALL AND JOE FATHERED BOTH OF THEM';
 		this.scrollpos = 600;
 	},
 
