@@ -9,7 +9,7 @@ game.TitleScreen = me.ScreenObject.extend({
 		this.scrollerfont = null;
 		this.scrollertween = null;
 
-		this.scroller = 'MITUL PATEL MADE A GAME but Cassie created the greatest wall ';
+		this.scroller = 'MITUL PATEL MADE A GAME BUT CASSIE CREATED THE GREATEST WALL ';
 		this.scrollpos = 600;
 	},
 
@@ -17,7 +17,7 @@ game.TitleScreen = me.ScreenObject.extend({
 		// If null, initialize the variables
 		if(this.title == null) {
 			// Initialize background image
-			this.title = me.loader.getImage('title_screen');
+			this.title = me.loader.getImage("Time_Travel_Watch");
 
 			// Initialize font
 			this.font = new me.BitmapFont('32x32_font', 32);
@@ -53,7 +53,7 @@ game.TitleScreen = me.ScreenObject.extend({
 	update: function() {
 		// If pressed
 		if(me.input.isKeyPressed('enter')) {
-			me.state.change(me.state.PLAY);
+			me.state.change(me.state.Story);
 		}
 		return true;
 	},

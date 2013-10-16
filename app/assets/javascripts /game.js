@@ -49,6 +49,7 @@ var game = {
 
         // Set Game Over Screen Object
         me.state.set(me.state.GAMEOVER, new game.EndScreen());
+        me.state.set(me.state.Story, new game.StoryScreen());
 
         // Set Transition Between States
         me.state.transition("fade", "#FFFFFF", 250);
