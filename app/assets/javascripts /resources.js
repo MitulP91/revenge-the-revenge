@@ -6,6 +6,7 @@ game.resources = [
 	 */
 	 // Area01 Tileset
 	{name: "build_atlas",  type:"image", src: "/assets/map/build_atlas.png"},
+	{name: "mountains",  type:"image", src: "/assets/map/Mountains.png"},
 
 	// Meta Tileset
 	{name: "metatiles32x32",  type:"image", src: "/assets/map/metatiles32x32.png"},
@@ -15,6 +16,7 @@ game.resources = [
 
     // Parallax Backgrounds
     {name: "great_wall_2",  type:"image", src: "/assets/great_wall_2.png"},
+    {name: "time_tunnel",  type:"image", src: "/assets/Time_Tunnel.png"},
 
     // Title Screen Background
     {name: "title_screen",         type:"image", src: "/assets/gui/title_screen.png"},
@@ -25,6 +27,8 @@ game.resources = [
 
     // Enemy Entities
     {name: "dragonenemy",      type:"image", src: "/assets/sprite/dragonenemy.png"},
+    {name: "witchenemy",      type:"image", src: "/assets/sprite/witch.png"},
+
 
     // Game Font
     {name: "32x32_font",    type:"image", src: "/assets/font/32x32_font.png"},
@@ -44,6 +48,8 @@ game.resources = [
 	 * {name: "example01", type: "tmx", src: "data/map/example01.json"},
  	 */
  	{name: "someword", type: "tmx", src: "/assets/map/someword.tmx"},
+
+ 	{name: "timetunnel", type: "tmx", src: "/assets/map/witchworld.tmx"},
  	
 
 	/* Background music. 
