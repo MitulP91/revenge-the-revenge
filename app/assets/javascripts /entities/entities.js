@@ -682,12 +682,12 @@ game.LevelEntity = me.LevelEntity.extend({
         if(obj.type == 'PLAYER') {
         	var current_level = me.levelDirector.getCurrentLevelId();
         	if(current_level === 'level2') {
-        		me.state.change(me.state.STORY2);
+        		me.state.change(me.state.china);
         	} else if(current_level === 'someword') {
-        		me.state.change(me.state.STORY3);
+        		me.state.change(me.state.TIMEWARP);
         	} else if(current_level === 'witchworld') {
-        		me.state.change(me.state.STORY4);
-        	}
+        		me.state.change(me.state.ROGER);
+        	} 
         	// if(this.settings.to) {
          //    	me.levelDirector.loadLevel(this.settings.to);
         	// } else {

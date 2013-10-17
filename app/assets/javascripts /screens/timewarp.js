@@ -1,4 +1,4 @@
-game.StoryScreen = me.ScreenObject.extend({ 
+game.TimewarpScreen = me.ScreenObject.extend({ 
 
 	init: function() {
 
@@ -12,7 +12,7 @@ game.StoryScreen = me.ScreenObject.extend({
         this.tween = null;
 
 
-		this.scroller = "THE SWEETEST AND\n SMARTEST OF ALL\n MEN AND THE LOVE\n OF MY LIFE,\n ROGER, CREATED TIME TRAVEL.\n UNFORTUNATLEY ROGER\n HAS LANDED IN THE HANDS\n OF THE EVIL WITCHES \n FROM WITCHWORLD AND IT IS UP TO \n ME TO SAVE HIM!\n IT SEEMS AS IF THE WITCHES HAVE TAKEN ROGER TO A\n PREHISTORIC LAND VOID OF ALL HUMANS. ……\n OH NO! WHO IS THAT NONE OTHER THAN\n THE CLONES OF ROGERS EX-GIRLFRIEND, ROSEFLOWER!";
+		this.scroller = "CRAP…… /n/n/n/n/n NOT THE TIME PORTAL………";
 
 
 		
@@ -69,4 +69,3 @@ game.StoryScreen = me.ScreenObject.extend({
 	    }
  
 });
-

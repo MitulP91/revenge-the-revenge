@@ -52,7 +52,9 @@ var game = {
 
         // Set Story Screen
         me.state.set(me.state.STORY, new game.StoryScreen());
-
+        me.state.set(me.state.CHINA, new game.ChinaScreen());   
+        me.state.set(me.state.TIMEWARP, new game.TimewarpScreen());
+        me.state.set(me.state.ROGER, new game.RogerScreen());
         // Set End Game Screen
         me.state.set(me.state.GAME_END, new game.WinScreen());
 
