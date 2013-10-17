@@ -86,11 +86,9 @@ var game = {
         // Enable Keyboard Bindings
         me.input.bindKey(me.input.KEY.LEFT,  "left");
         me.input.bindKey(me.input.KEY.RIGHT, "right");
-        me.input.bindKey(me.input.KEY.X,     "jump", true);
-        me.input.bindKey(me.input.KEY.Z,     "shoot", true);
-        me.input.bindKey(me.input.KEY.C,     "melee", true);
-        me.input.bindKey(me.input.KEY.UP, "up", false);
-        me.input.bindKey(me.input.KEY.DOWN, "down", false);
+        me.input.bindKey(me.input.KEY.UP,     "jump");
+        me.input.bindKey(me.input.KEY.SHIFT,     "shoot");
+        me.input.bindKey(me.input.KEY.ALT,     "melee");
 
 
 
