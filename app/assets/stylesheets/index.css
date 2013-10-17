@@ -16,12 +16,23 @@ body {
     /* Allow canvas to hit the edges of the browser viewport. */
     margin: 0;
 }
+/*#avatar {
+    float: left;
+    margin-left: 0
+}
+*/
 
-h1 {
+#container {
+ display: inline-block;
+ margin-top: 0px;
+}
+
+.title_page {
     font-family: 'Stint Ultra Expanded', cursive;
-    font-size: 50px;
+    font-size: 20px;
     text-align: center;
     color: #D9CB9E;
+    margin: 100px;
     
 }
 h2 {

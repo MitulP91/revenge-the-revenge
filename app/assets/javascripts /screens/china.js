@@ -12,7 +12,7 @@ game.ChinaScreen = me.ScreenObject.extend({
         this.tween = null;
 
 
-		this.scroller = "ROSEFLOWER HAS \n\n\n NOTHING ON ME...\n\n\n BUT THOSE MEDLY \n\n\nWITCHES MOVED ROGER\n\n\nTO THE AGE OF\n\n\nANCIENT CHINA…\n\n\nLIKE A COUPLE\n\n\nOF DRAGONS\n\n\nWILL KEEP ME FROM MY\n\n\nONE AND ONLY ROG…\n\n\nBRING IN ON WITCHES!";
+		this.scroller = "SILLY ROSEFLOWER HAS\n\n NOTHING ON ME...\n\n\n\n BUT THOSE MEDLY\n\nWITCHES MOVED ROGER TO\n\n THE AGE OF ANCIENT CHINA…\n\n\n\n\nLIKE A COUPLE OF \n\nDRAGONS WILL KEEP ME\n\n FROM MY ONE AND ONLY ROG…\n\n\n\n\n\n\nBRING IN ON WITCHES";
 
 
 		
@@ -31,14 +31,14 @@ game.ChinaScreen = me.ScreenObject.extend({
             this.scrollerfont = new me.BitmapFont("atascii", 24);
         	}
 
-        	this.storyX = 100;
+        	this.storyX = 50;
 			this.storyY = 500;
 			//did not add animation tween yet
 			this.tween = new me.Tween(this).to({
         	storySize: 0,
-        	storyX: 100,
-        	storyY: -300
-    		}, 12000).start();
+        	storyX: 50,
+        	storyY: -1000
+    		}, 17000).start();
 
 			// enable the keyboard
         	me.input.bindKey(me.input.KEY.ENTER, "enter", true);
