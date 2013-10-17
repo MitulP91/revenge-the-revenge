@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
 
 	def index
-		@comments = Comment.order('created_at DESC LIMIT 10').all
+		@comments = Comment.order('created_at DESC').limit(10)
 	 	@comment = Comment.new
 	end
 
@@ -25,5 +25,10 @@ class ProjectsController < ApplicationController
 				current_user.scores << @score
 			end
 		end
+	end
+
+	def high_scores
+		@high_scores = Score.order('the_score DESC').limit(10)
+		@users = User.all
 	end
 end	

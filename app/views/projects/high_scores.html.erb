@@ -1,0 +1,18 @@
+<h1>High Scores</h1>
+
+<table>
+	<thead>
+		<td>Username</td>
+		<td>High Score</td>
+	</thead>
+
+	<tbody>
+		<% @high_scores.each do |high_score| %>
+		<tr>
+			<td><%= high_score.user.email %></td>
+			<td><%= high_score.the_score %></td>
+		</tr>
+		<% end %>
+	</tbody>
+
+</table>

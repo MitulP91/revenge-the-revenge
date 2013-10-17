@@ -4,10 +4,9 @@ AndrewmaddenCom::Application.routes.draw do
 
   post '/comment/create' => 'projects#create'
   post '/score/create' => 'projects#scores'
+  get '/projects/high_scores' => 'projects#high_scores', as: "high_scores"
 
   root to: 'projects#index'
-
-
 
 #         new_user_session GET    /users/sign_in(.:format)       sessions#new
 #             user_session POST   /users/sign_in(.:format)       sessions#create
