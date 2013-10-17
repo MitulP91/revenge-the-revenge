@@ -463,7 +463,6 @@ game.LevelEntity = me.LevelEntity.extend({
 
         // Save all settings
         this.settings = settings;
-        console.log(this.settings.to);
     },
     onCollision : function (res, obj) {
     	// Only Moves to Next Level for Player Collision

@@ -26,6 +26,10 @@ game.WinScreen = me.ScreenObject.extend({
 			this.scrollerfont = new me.BitmapFont('32x32_font', 32);
 		}
 
+		saveScore(game.data.score);
+
+
+
 		// Reset to default
 		this.scrollerpos = 640;
 
