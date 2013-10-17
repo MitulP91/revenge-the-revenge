@@ -9,7 +9,7 @@ game.TitleScreen = me.ScreenObject.extend({
 		this.scrollerfont = null;
 		this.scrollertween = null;
 
-		this.scroller = 'ENJOY ';
+		this.scroller = '';
 		this.scrollpos = 600;
 	},
 
@@ -20,7 +20,7 @@ game.TitleScreen = me.ScreenObject.extend({
 			this.title = me.loader.getImage("Time_Warp");
 
 			// Initialize font
-			this.font = new me.BitmapFont('32x32_font', 32);
+			this.font = new me.BitmapFont('atascii', 24);
 
 			// Set the Scroller
 			this.scrollerfont = new me.BitmapFont('32x32_font', 32);
@@ -61,7 +61,7 @@ game.TitleScreen = me.ScreenObject.extend({
 	draw: function(context) {
 		context.drawImage(this.title, 0, 0);
 
-		this.font.draw(context, "PRESS ENTER TO PLAY", 20, 240);
+		this.font.draw(context, "PRESS ENTER TO PLAY", 100, 240);
 		this.scrollerfont.draw(context, this.scroller, this.scrollerpos, 440);
 	},
 
