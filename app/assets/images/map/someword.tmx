@@ -22,7 +22,7 @@
  <imagelayer name="parallax" width="40" height="15">
   <image source="../great_wall_2.png"/>
   <properties>
-   <property name="ratio" value="0.25"/>
+   <property name="ratio" value="0.0"/>
   </properties>
  </imagelayer>
  <layer name="background" width="40" height="15">
