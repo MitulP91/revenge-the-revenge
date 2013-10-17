@@ -21,9 +21,12 @@ game.resources = [
     {name: "great_wall_2",  type:"image", src: "/assets/great_wall_2.png"},
     {name: "time_tunnel",  type:"image", src: "/assets/Time_Tunnel.png"},
 
+
     // Title Screen Background
-    {name: "title_screen",         type:"image", src: "/assets/gui/title_screen.png"},
-    {name: "Time_Travel_Watch",         type:"image", src: "/assets/gui/Time_Travel_Watch.png"},
+    
+   {name: "death_screen",         type:"image", src: "/assets/gui/you-died.png"},
+    {name: "Time_Warp",         type:"image", src: "/assets/gui/resizedimage.png"},
+    
 
     // Spinning Coin Spritesheet
     {name: "spinning_coin_gold",  type:"image", src: "/assets/sprite/spinning_coin_gold.png"},

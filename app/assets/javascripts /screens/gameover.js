@@ -9,7 +9,7 @@ game.EndScreen = me.ScreenObject.extend({
 		this.scrollerfont = null;
 		this.scrollertween = null;
 
-		this.scroller = 'MITUL PATEL MADE A GAME   		';
+		this.scroller = 'GAME OVER. PRESS ENTER TO TRY AGAIN.';
 		this.scrollpos = 600;
 	},
 
@@ -17,13 +17,13 @@ game.EndScreen = me.ScreenObject.extend({
 		// If null, initialize the variables
 		if(this.title == null) {
 			// Initialize background image
-			this.title = me.loader.getImage('Time_Travel_Watch');
+			this.title = me.loader.getImage('death_screen');
 
 			// Initialize font
-			this.font = new me.BitmapFont('32x32_font', 32);
+			this.font = new me.BitmapFont('atascii', 24);
 
 			// Set the Scroller
-			this.scrollerfont = new me.BitmapFont('32x32_font', 32);
+			this.scrollerfont = new me.BitmapFont('atascii', 24);
 		}
 
 		// Reset to default
@@ -61,9 +61,9 @@ game.EndScreen = me.ScreenObject.extend({
 	draw: function(context) {
 		context.drawImage(this.title, 0, 0);
 
-		this.font.draw(context, "GAME OVER", 180, 210);
-		this.font.draw(context, "PRESS ENTER TO", 100, 300);
-		this.font.draw(context, "TRY AGAIN", 180, 350);
+		// this.font.draw(context, "GAME OVER", 180, 210);
+		// this.font.draw(context, "PRESS ENTER TO", 100, 300);
+		// this.font.draw(context, "TRY AGAIN", 180, 350);
 		this.scrollerfont.draw(context, this.scroller, this.scrollerpos, 440);
 	},
 
