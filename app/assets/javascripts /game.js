@@ -50,13 +50,14 @@ var game = {
         // Set Game Over Screen Object
         me.state.set(me.state.GAMEOVER, new game.EndScreen());
 
-        // Set Story Screen
+        // Set Story Screens
         me.state.set(me.state.STORY, new game.StoryScreen());
+        me.state.set(me.state.STORY2, new game.Story2Screen());
+        me.state.set(me.state.STORY3, new game.Story3Screen());
+        me.state.set(me.state.STORY4, new game.Story4Screen());
 
         // Set End Game Screen
         me.state.set(me.state.GAME_END, new game.WinScreen());
-
-        
 
         // Set Transition Between States
         me.state.transition("fade", "#FFFFFF", 250);

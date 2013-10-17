@@ -121,21 +121,6 @@ game.PlayerEntity = me.ObjectEntity.extend({
         if(me.input.isKeyPressed('melee')) {
             if(me.timer.getTime() - this.last_melee > 500) {
                 this.renderable.setCurrentAnimation('attack', 'walk');
-                // this.melee_action = true;
-                // console.log(this.melee_action);
-                // (function(ma, obj) {
-                //     obj.melee_action = ma;
-                //     setTimeout(function() {
-                //         console.log("2" + ma);
-                //         obj.update();
-                //     }, 2000);
-                // })(this.melee_action, this);
-                // this.vel.x += 1;
-                // this.update();
-
-
-
-                
 
                 var melee = new MeleeEntity(this.pos.x, this.pos.y, this.walk_direction);
                 this.last_melee = me.timer.getTime();
@@ -678,10 +663,13 @@ game.LevelEntity = me.LevelEntity.extend({
         if(obj.type == 'PLAYER') {
         	var current_level = me.levelDirector.getCurrentLevelId();
         	if(current_level === 'level2') {
+        		console.log(current_level);
         		me.state.change(me.state.STORY2);
         	} else if(current_level === 'someword') {
+        		console.log(current_level);
         		me.state.change(me.state.STORY3);
         	} else if(current_level === 'witchworld') {
+        		console.log(current_level);
         		me.state.change(me.state.STORY4);
         	}
         	// if(this.settings.to) {
