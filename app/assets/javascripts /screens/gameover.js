@@ -31,7 +31,7 @@ game.EndScreen = me.ScreenObject.extend({
 
 		// Tween to Animate Arrow
     	this.scrollertween = new me.Tween(this).to({
-        	scrollerpos: -850
+        	scrollerpos: -800
     	}, 10000).onComplete(this.scrollover.bind(this)).start();
 
 		// Enable the Keyboard
@@ -64,7 +64,7 @@ game.EndScreen = me.ScreenObject.extend({
 		// this.font.draw(context, "GAME OVER", 180, 210);
 		// this.font.draw(context, "PRESS ENTER TO", 100, 300);
 		// this.font.draw(context, "TRY AGAIN", 180, 350);
-		this.scrollerfont.draw(context, this.scroller, this.scrollerpos, 440);
+		this.scrollerfont.draw(context, this.scroller, this.scrollerpos, 400);
 	},
 
 	onDestroyEvent: function() {

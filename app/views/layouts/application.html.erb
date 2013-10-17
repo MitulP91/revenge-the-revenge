@@ -16,9 +16,9 @@
 
 			<% if user_signed_in? %>
 
-				<%= image_tag avatar_url(current_user) %>
+				<div id='avatar'><%= image_tag avatar_url(current_user) %>
 
-				 <strong><%= current_user.email %></strong>.
+				 <strong><%= current_user.email %></strong>.</div>
 				<%= link_to 'Edit Profile', edit_user_registration_path, id: 'edit-profile' %>
 				<%= link_to 'Logout', destroy_user_session_path, method: :delete, id: 'logout' %>
 
