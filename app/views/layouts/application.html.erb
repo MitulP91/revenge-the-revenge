@@ -19,11 +19,20 @@
 				Logged in as <strong><%= current_user.email %></strong>.
 				<%= link_to 'Edit Profile', edit_user_registration_path, id: 'edit-profile' %>
 				<%= link_to 'Logout', destroy_user_session_path, method: :delete, id: 'logout' %>
+
+				<%= link_to 'Profile', my_scores_path, id: 'profile' %>
+				<%= link_to 'High Scores', high_scores_path, id: 'high_scores' %>
+				<%= link_to 'Home', root_path, id: 'home' %>
+
 			<% else %>
 				<%= link_to 'Sign up', new_user_registration_path, id: 'signup' %>
 				<a id="login" href="#">Login</a>
 				<%= link_to 'Edit Profile', edit_user_registration_path, id: 'edit-profile', style: 'display: none;' %>
 				<%= link_to 'Logout', destroy_user_session_path, method: :delete, id: 'logout', style: 'display: none;' %>
+				<%= link_to 'Home', root_path, id: 'home' %>
+				<%= link_to 'High Scores', high_scores_path, id: 'high_scores' %>
+
+
 			<% end %>
 
 		</div>

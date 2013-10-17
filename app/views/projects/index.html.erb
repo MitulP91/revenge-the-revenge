@@ -6,18 +6,22 @@
 <!-- Main Canvas Screen -->
 <div id="screen"></div>
 
-<!-- Comment Input -->
-<% if current_user %>
-	<input type="text" id="comment-text"/><button id="add-comment">Add Comment</button>
-<% end %>
-
 <!-- Comments -->
-<ul id="comments">
-	<% @comments.each do |comment| %>
-	<% user = User.find_by_id(comment.user_id).email %>
-		<li><%= "#{comment.the_comment} created by #{user}" %></li>
+<div id="comments-container">
+<!-- Comment Input -->
+
+	<h2 id="comments-h2">Comments</h2>
+	<% if current_user %>
+		<input type="text" id="comment-text"/><button id="add-comment">Add Comment</button>
 	<% end %>
-</ul>
+
+	<ul id="comments">
+		<% @comments.each do |comment| %>
+		<% user = User.find_by_id(comment.user_id).email %>
+			<li class='comments-li'><%= "#{comment.the_comment} created by #{user}" %></li>
+		<% end %>
+	</ul>
+</div>
 
 <script type="text/javascript">
 	window.onReady(function onReady() {
