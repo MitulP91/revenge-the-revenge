@@ -676,11 +676,19 @@ game.LevelEntity = me.LevelEntity.extend({
     onCollision : function (res, obj) {
     	// Only Moves to Next Level for Player Collision
         if(obj.type == 'PLAYER') {
-        	if(this.settings.to) {
-            	me.levelDirector.loadLevel(this.settings.to);
-        	} else {
-        		me.state.change(me.state.GAME_END);
+        	var current_level = me.levelDirector.getCurrentLevelId();
+        	if(current_level === 'level2') {
+        		me.state.change(me.state.STORY2);
+        	} else if(current_level === 'someword') {
+        		me.state.change(me.state.STORY3);
+        	} else if(current_level === 'witchworld') {
+        		me.state.change(me.state.STORY4);
         	}
+        	// if(this.settings.to) {
+         //    	me.levelDirector.loadLevel(this.settings.to);
+        	// } else {
+        	// 	me.state.change(me.state.GAME_END);
+        	// }
         }
     }
 });
