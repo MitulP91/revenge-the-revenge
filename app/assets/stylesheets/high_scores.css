@@ -1,0 +1,13 @@
+#hs-h1 {
+	text-align: center;
+}
+
+#hs-table {
+	border: 2px solid black;
+	border-radius: 5px;
+	margin: 0 auto;
+}
+
+.hs-td {
+	border: 1px solid black;
+}

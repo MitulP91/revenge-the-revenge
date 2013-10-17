@@ -1,16 +1,16 @@
-<h1>High Scores</h1>
+<h1 id="hs-h1">High Scores</h1>
 
-<table>
+<table id="hs-table">
 	<thead>
-		<td>Username</td>
-		<td>High Score</td>
+		<td class="hs-td">Username</td>
+		<td class="hs-td">High Score</td>
 	</thead>
 
 	<tbody>
 		<% @high_scores.each do |high_score| %>
 		<tr>
-			<td><%= high_score.user.email %></td>
-			<td><%= high_score.the_score %></td>
+			<td class="hs-td"><%= high_score.user.email %></td>
+			<td class="hs-td"><%= high_score.the_score %></td>
 		</tr>
 		<% end %>
 	</tbody>
