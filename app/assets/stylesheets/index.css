@@ -153,3 +153,10 @@ p.highlighted {
 .comment-hr {
     width: 70%;
 }
+
+.wrapper {
+    border: 3px solid white;
+    margin: 25px auto 0px auto;
+    width: 85%;
+}
+
