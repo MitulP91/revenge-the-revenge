@@ -29,6 +29,5 @@ class ProjectsController < ApplicationController
 
 	def high_scores
 		@high_scores = Score.order('the_score DESC').limit(10)
-		@users = User.all
 	end
 end	
