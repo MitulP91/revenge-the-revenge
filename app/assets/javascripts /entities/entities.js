@@ -49,6 +49,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
 	update: function() {
 		// Set Movement Left and Right
 		if (me.input.isKeyPressed('left')) {
+            force_render = false;
 			// Set Animation
 			// this.renderable.setCurrentAnimation("walk");
 
@@ -70,6 +71,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
             // Update the Entity Velocity
             this.vel.x -= this.accel.x * me.timer.tick;
         } else if (me.input.isKeyPressed('right')) {
+            force_render = false;
         	// Set Animation
         	// this.renderable.setCurrentAnimation("walk");
 
@@ -98,6 +100,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
         if (me.input.isKeyPressed('jump')) {
             // Make Sure Jumping/Falling is not Already Occuring
             if (!this.jumping && !this.falling) {
+                force_render = false;
                	// Set Jump Velocity
                 this.vel.y = -this.maxVel.y * me.timer.tick;
                 
@@ -112,6 +115,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
         // Set Action for Shoot
         if(me.input.isKeyPressed('shoot')) {
         	if(me.timer.getTime() - this.last_bullet_shot > 500) {
+                force_render = false;
 	        	var shot = new ShotEntity(this.pos.x, this.pos.y, this.walk_direction);
 	        	this.last_bullet_shot = me.timer.getTime();
 	        	me.game.add(shot, this.z); 
@@ -122,7 +126,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
         // Set Action for Melee Attack
         if(me.input.isKeyPressed('melee')) {
             if(me.timer.getTime() - this.last_melee > 500) {
-                this.renderable.setCurrentAnimation('attack', 'stand');
+                this.renderable.setCurrentAnimation('attack', 'walk');
 
                 var self = this;
 
@@ -192,7 +196,6 @@ game.PlayerEntity = me.ObjectEntity.extend({
         }
         // Else No Update
         return false;
-        force_render = false;
 	}
 });
 
