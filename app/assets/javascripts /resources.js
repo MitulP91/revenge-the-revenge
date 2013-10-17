@@ -51,6 +51,7 @@ game.resources = [
     {name: "parallax_background2",  type:"image", src: "/assets/parallax_background2.png"},
     {name: "gta2tiles",  type:"image", src: "/assets/map/gta2tiles.png"},
     
+    {name: "parallax", type: "image", src: "assets/area01_bkg0.png"},
 
 	/* Atlases 
 	 * @example
@@ -66,7 +67,7 @@ game.resources = [
  	{name: "level2",  type:"tmx", src: "/assets/map/level2.tmx"},
  	{name: "someword", type: "tmx", src: "/assets/map/someword.tmx"},
 
- 	// {name: "someword-test", type: "tmx", src: "/assets/map/someword-test.tmx"},
+ 	// {name: "someword", type: "tmx", src: "/assets/map/someword-test.tmx"},
 
  	{name: "timetunnel", type: "tmx", src: "/assets/map/witchworld.tmx"},
  	
