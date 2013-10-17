@@ -121,6 +121,10 @@ game.PlayerEntity = me.ObjectEntity.extend({
         if(me.input.isKeyPressed('melee')) {
             if(me.timer.getTime() - this.last_melee > 500) {
                 this.renderable.setCurrentAnimation('attack', 'walk');
+
+
+                
+
                 // this.melee_action = true;
                 // console.log(this.melee_action);
                 // (function(ma, obj) {
