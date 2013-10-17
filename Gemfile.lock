@@ -59,6 +59,7 @@ GEM
     mime-types (1.25)
     multi_json (1.8.1)
     multi_xml (0.5.5)
+    newrelic_rpm (3.6.8.164)
     orm_adapter (0.4.0)
     pg (0.17.0)
     polyglot (0.3.3)
@@ -129,6 +130,7 @@ DEPENDENCIES
   devise
   httparty
   jquery-rails
+  newrelic_rpm
   pg
   pry
   rails (= 3.2.13)
