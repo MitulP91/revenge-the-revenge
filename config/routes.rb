@@ -4,6 +4,8 @@ AndrewmaddenCom::Application.routes.draw do
 
   post '/comment/create' => 'projects#create'
   post '/score/create' => 'projects#scores'
+
+  get '/my_scores' => 'projects#profile', as: "my_scores"
   get '/projects/high_scores' => 'projects#high_scores', as: "high_scores"
 
   root to: 'projects#index'

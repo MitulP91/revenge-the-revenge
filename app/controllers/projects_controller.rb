@@ -23,11 +23,19 @@ class ProjectsController < ApplicationController
 			@score = Score.new(params[:score])
 			if @score.save
 				current_user.scores << @score
+				render :json => true;
+			else
+				render :json => false;
 			end
 		end
 	end
 
+	def profile
+		@my_scores = current_user.scores.order('the_score DESC').all
+		@my_comments = current_user.comments.order('created_at DESC').all
+	end
+	
 	def high_scores
 		@high_scores = Score.order('the_score DESC').limit(10)
 	end
-end	
+end

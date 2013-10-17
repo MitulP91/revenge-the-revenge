@@ -1,0 +1,34 @@
+<div id="profile-container">
+	<button id="view-scores">View Scores</button>
+	<button id="view-comments">View Comments</button>
+
+	<table id="score-table">
+		<thead>
+			<td>Your Scores</td>
+			<td>Created At</td>
+		</thead>
+		<tbody>
+			<% @my_scores.each do |score| %>
+			<tr>
+				<td><%= score.the_score %></td>
+				<td><%= score.created_at %></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+
+	<table id="comment-table">
+		<thead>
+			<td>Your Comments</td>
+			<td>Created At</td>
+		</thead>
+		<tbody>
+			<% @my_comments.each do |comment| %>
+			<tr>
+				<td><%= comment.the_comment %></td>
+				<td><%= comment.created_at %></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
