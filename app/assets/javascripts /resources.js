@@ -6,6 +6,7 @@ game.resources = [
 	 */
 	 // Area01 Tileset
 	{name: "build_atlas",  type:"image", src: "/assets/map/build_atlas.png"},
+
 	{name: "Portal_skill_icon",  type:"image", src: "/assets/map/Portal_skill_icon.png"},
 	{name: "mountains",  type:"image", src: "/assets/map/Mountains.png"},
 
