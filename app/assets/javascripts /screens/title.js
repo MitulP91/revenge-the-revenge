@@ -9,7 +9,7 @@ game.TitleScreen = me.ScreenObject.extend({
 		this.scrollerfont = null;
 		this.scrollertween = null;
 
-		this.scroller = 'MITUL PATEL MADE A GAME BUT CASSIE CREATED THE GREATEST WALL AND JOE FATHERED BOTH OF THEM';
+		this.scroller = 'ENJOY ';
 		this.scrollpos = 600;
 	},
 
@@ -17,7 +17,7 @@ game.TitleScreen = me.ScreenObject.extend({
 		// If null, initialize the variables
 		if(this.title == null) {
 			// Initialize background image
-			this.title = me.loader.getImage("Time_Travel_Watch");
+			this.title = me.loader.getImage("Time_Warp");
 
 			// Initialize font
 			this.font = new me.BitmapFont('32x32_font', 32);

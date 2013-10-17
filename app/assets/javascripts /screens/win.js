@@ -17,7 +17,7 @@ game.WinScreen = me.ScreenObject.extend({
 		// If null, initialize the variables
 		if(this.title == null) {
 			// Initialize background image
-			this.title = me.loader.getImage('Time_Travel_Watch');
+			this.title = me.loader.getImage('Time_Warp');
 
 			// Initialize font
 			this.font = new me.BitmapFont('32x32_font', 32);
