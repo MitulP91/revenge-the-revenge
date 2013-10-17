@@ -52,9 +52,9 @@ var game = {
 
         // Set Story Screens
         me.state.set(me.state.STORY, new game.StoryScreen());
-        me.state.set(me.state.STORY2, new game.Story2Screen());
-        me.state.set(me.state.STORY3, new game.Story3Screen());
-        me.state.set(me.state.STORY4, new game.Story4Screen());
+        me.state.set(me.state.CHINA, new game.ChinaScreen());   
+        me.state.set(me.state.TIMEWARP, new game.TimewarpScreen());
+        me.state.set(me.state.ROGER, new game.RogerScreen());
 
         // Set End Game Screen
         me.state.set(me.state.GAME_END, new game.WinScreen());
@@ -76,6 +76,10 @@ var game = {
         me.input.bindKey(me.input.KEY.X,     "jump", true);
         me.input.bindKey(me.input.KEY.Z,     "shoot", true);
         me.input.bindKey(me.input.KEY.C,     "melee", true);
+        me.input.bindKey(me.input.KEY.UP, "up", true);
+        me.input.bindKey(me.input.KEY.DOWN, "down", false);
+
+
 
         // Start the Game
         me.state.change(me.state.MENU);
