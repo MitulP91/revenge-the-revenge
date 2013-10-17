@@ -36,7 +36,7 @@ game.RogerScreen = me.ScreenObject.extend({
 			this.tween = new me.Tween(this).to({
         	storySize: 0,
         	storyX: 100,
-        	storyY: -100
+        	storyY: -500
     		}, 12000).start();
 
 			// enable the keyboard
