@@ -42,7 +42,7 @@ game.resources = [
     {name: "atascii-white",    type:"image", src: "/assets/font/atascii_24px_white.png"},
 
     // Bullet Sprite
-    {name: "bullet",    type:"image", src: "/assets/sprite/bullet.png"},
+    {name: "bullet",    type:"image", src: "/assets/sprite/shuriken.png"},
 	
     // Level2 Tileset
     {name: "gta2tiles",  type:"image", src: "/assets/map/gta2tiles.png"},
