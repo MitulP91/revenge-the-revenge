@@ -661,15 +661,13 @@ game.LevelEntity = me.LevelEntity.extend({
     onCollision : function (res, obj) {
     	// Only Moves to Next Level for Player Collision
         if(obj.type == 'PLAYER') {
+        	game.data.hp = 3;
         	var current_level = me.levelDirector.getCurrentLevelId();
         	if(current_level === 'level2') {
-        		console.log(current_level);
-        		me.state.change(me.state.china);
+        		me.state.change(me.state.CHINA);
         	} else if(current_level === 'someword') {
-        		console.log(current_level);
         		me.state.change(me.state.TIMEWARP);
-        	} else if(current_level === 'witchworld') {
-        		console.log(current_level);
+        	} else if(current_level === 'timetunnel') {
         		me.state.change(me.state.ROGER);
         	} 
 

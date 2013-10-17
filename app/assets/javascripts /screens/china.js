@@ -12,7 +12,7 @@ game.ChinaScreen = me.ScreenObject.extend({
         this.tween = null;
 
 
-		this.scroller = "ROSEFLOWER HAS NOTHING ON ME../n BUT THOSE MEDLY WITCHES MOVED ROGER/n TO THE AGE OF ANCIENT CHINA…/n LIKE A COUPLE OF DRAGONS WILL KEEP ME FROM MY/n ONE AND ONLY ROG… BRING IN ON WITCHES!";
+		this.scroller = "ROSEFLOWER HAS NOTHING ON ME..\n BUT THOSE MEDLY WITCHES MOVED ROGER\n TO THE AGE OF ANCIENT CHINA…\n LIKE A COUPLE OF DRAGONS WILL KEEP ME FROM MY\n ONE AND ONLY ROG… BRING IN ON WITCHES!";
 
 
 		
@@ -48,7 +48,8 @@ game.ChinaScreen = me.ScreenObject.extend({
 	    update: function() {
 	    	 // enter pressed ?
 	        if (me.input.isKeyPressed('enter')) {
-	            me.state.change(me.state.PLAY);
+	            // me.state.change(me.state.PLAY);
+	            me.levelDirector.loadLevel('someword');
 	        }
 	        return true;
 	    },

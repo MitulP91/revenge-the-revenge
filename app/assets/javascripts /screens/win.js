@@ -26,11 +26,10 @@ game.WinScreen = me.ScreenObject.extend({
 			this.scrollerfont = new me.BitmapFont('32x32_font', 32);
 		}
 
+		// Save User Score
 		saveScore(game.data.score);
 
-
-
-		// Reset to default
+		// Reset to Default
 		this.scrollerpos = 640;
 
 		// Tween to Animate Arrow
