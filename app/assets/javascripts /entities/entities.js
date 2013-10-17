@@ -1,3 +1,5 @@
+var force_render = false;
+
 // Create the Main Player Sprite
 game.PlayerEntity = me.ObjectEntity.extend({
 	// Constructor
@@ -35,7 +37,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
 		// Set Animations
         this.renderable.addAnimation('walk', [0,1,2]);
         this.renderable.addAnimation('attack', [3,4]);
-        // this.renderable.addAnimation('holster', [5]);
+        this.renderable.addAnimation('stand', [0]);
         this.renderable.addAnimation('jump', [6,7]);
 
         // Set Default Animation
@@ -120,12 +122,17 @@ game.PlayerEntity = me.ObjectEntity.extend({
         // Set Action for Melee Attack
         if(me.input.isKeyPressed('melee')) {
             if(me.timer.getTime() - this.last_melee > 500) {
-                this.renderable.setCurrentAnimation('attack', 'walk');
+                this.renderable.setCurrentAnimation('attack', 'stand');
+
+                var self = this;
 
                 var melee = new MeleeEntity(this.pos.x, this.pos.y, this.walk_direction);
                 this.last_melee = me.timer.getTime();
                 me.game.add(melee, this.z);
                 me.game.sort();
+                if (melee) {
+                    force_render = true;
+                }
             }
         }
 
@@ -178,13 +185,14 @@ game.PlayerEntity = me.ObjectEntity.extend({
 		}
 		
         // Check if Animation Update is Needed 
-        if(this.vel.x != 0 || this.vel.y != 0) {
+        if(this.vel.x != 0 || this.vel.y != 0 || force_render != false) {
         	// Update the Animation
         	this.parent();
         	return true;
         }
         // Else No Update
         return false;
+        force_render = false;
 	}
 });
 
