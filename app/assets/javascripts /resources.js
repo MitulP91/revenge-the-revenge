@@ -26,6 +26,7 @@ game.resources = [
 
     // Enemy Entities
     {name: "dragonenemy",      type:"image", src: "/assets/sprite/dragonenemy.png"},
+    {name: "ex-gf-enemy",      type:"image", src: "/assets/sprite/ex-gf.png"},
 
     // Game Font
     {name: "32x32_font",    type:"image", src: "/assets/font/32x32_font.png"},
@@ -34,6 +35,14 @@ game.resources = [
     // Bullet Sprite
     {name: "bullet",    type:"image", src: "/assets/sprite/bullet.png"},
 	
+    // Level2 Tileset
+    {name: "gta2tiles",  type:"image", src: "/assets/map/gta2tiles.png"},
+    {name: "kByGF",  type:"image", src: "/assets/map/kByGF.png"},
+    {name: "parallax_background1",  type:"image", src: "/assets/parallax_background1.png"},
+    {name: "parallax_background2",  type:"image", src: "/assets/parallax_background2.png"},
+    {name: "gta2tiles",  type:"image", src: "/assets/map/gta2tiles.png"},
+    {name: "level2",  type:"tmx", src: "/assets/map/level2.tmx"},
+
 	/* Atlases 
 	 * @example
 	 * {name: "example_tps", type: "tps", src: "data/img/example_tps.json"},

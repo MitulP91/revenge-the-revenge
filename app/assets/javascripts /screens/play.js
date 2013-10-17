@@ -5,7 +5,11 @@ game.PlayScreen = me.ScreenObject.extend({
 		// me.audio.playTrack("DST-InertExponent");
 
 		// Load Level 1
-		me.levelDirector.loadLevel('someword');
+
+		// me.levelDirector.loadLevel('someword');
+
+		me.levelDirector.loadLevel('level2')
+
 
 		// Reset the Score
 		game.data.score = 0;
