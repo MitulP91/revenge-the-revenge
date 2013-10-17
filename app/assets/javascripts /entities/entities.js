@@ -672,7 +672,7 @@ game.LevelEntity = me.LevelEntity.extend({
         	} 
 
         	// if(this.settings.to) {
-         //    	me.levelDirector.loadLevel(this.settings.to);
+            //    	me.levelDirector.loadLevel(this.settings.to);
         	// } else {
         	// 	me.state.change(me.state.GAME_END);
         	// }

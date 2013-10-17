@@ -11,7 +11,7 @@ game.RogerScreen = me.ScreenObject.extend({
         this.tween = null;
 
 
-		this.scroller = "I FOUND ROGER!";
+		this.scroller = "I DEAFEATED THE\n\n\nEVIL WITCHES FROM\n\n\nWITCHWORLD AND SAVED\n\n\n MY BELOVED ROGER!";
 
 
 		
@@ -24,20 +24,20 @@ game.RogerScreen = me.ScreenObject.extend({
 
 	    	 if (this.title == null) {
             // init stuff if not yet done
-            this.title = me.loader.getImage("Time_Travel_Watch");
+            this.title = me.loader.getImage("Time_Warp");
  
             // set the scroller
-            this.scrollerfont = new me.BitmapFont("32x32_font", 32);
+            this.scrollerfont = new me.BitmapFont("atascii", 24);
         	}
 
-        	this.storyX = 50;
+        	this.storyX = 100;
 			this.storyY = 500;
 			//did not add animation tween yet
 			this.tween = new me.Tween(this).to({
         	storySize: 0,
-        	storyX: 50,
+        	storyX: 100,
         	storyY: -100
-    		}, 9000).start();
+    		}, 12000).start();
 
 			// enable the keyboard
         	me.input.bindKey(me.input.KEY.ENTER, "enter", true);
