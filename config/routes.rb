@@ -3,6 +3,7 @@ AndrewmaddenCom::Application.routes.draw do
   devise_for :users, :controllers => {:sessions => 'sessions'}
 
   post '/comment/create' => 'projects#create'
+  post '/score/create' => 'projects#scores'
 
   root to: 'projects#index'
 

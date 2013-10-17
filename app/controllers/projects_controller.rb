@@ -17,4 +17,13 @@ class ProjectsController < ApplicationController
 			end	
 		end
 	end
+
+	def scores
+		if current_user
+			@score = Score.new(params[:score])
+			if @score.save
+				current_user.scores << @score
+			end
+		end
+	end
 end	

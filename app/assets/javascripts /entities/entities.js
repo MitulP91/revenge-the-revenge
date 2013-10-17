@@ -26,12 +26,16 @@ game.PlayerEntity = me.ObjectEntity.extend({
 		// Store walking direction
 		this.walk_direction = false;
 
+        // melee variable
+        // this.melee_action = false;
+
 		// Set Type
 		this.type = 'PLAYER';
 
 		// Set Animations
         this.renderable.addAnimation('walk', [0,1,2]);
         this.renderable.addAnimation('attack', [3,4]);
+        // this.renderable.addAnimation('holster', [5]);
         this.renderable.addAnimation('jump', [6,7]);
 
         // Set Default Animation
@@ -117,11 +121,27 @@ game.PlayerEntity = me.ObjectEntity.extend({
         if(me.input.isKeyPressed('melee')) {
             if(me.timer.getTime() - this.last_melee > 500) {
                 this.renderable.setCurrentAnimation('attack', 'walk');
+                // this.melee_action = true;
+                // console.log(this.melee_action);
+                // (function(ma, obj) {
+                //     obj.melee_action = ma;
+                //     setTimeout(function() {
+                //         console.log("2" + ma);
+                //         obj.update();
+                //     }, 2000);
+                // })(this.melee_action, this);
+                // this.vel.x += 1;
+                // this.update();
+
+
+
+                
+
                 var melee = new MeleeEntity(this.pos.x, this.pos.y, this.walk_direction);
                 this.last_melee = me.timer.getTime();
                 me.game.add(melee, this.z);
-                me.game.sort(); 
-            } 
+                me.game.sort();
+            }
         }
 
         // Set Gameover if You Fall Through Bottom
@@ -276,6 +296,99 @@ game.EnemyEntity = me.ObjectEntity.extend({
         if (!this.inViewport) {
             return false;
  		}
+
+        if (this.alive) {
+            if (this.walkLeft && this.pos.x <= this.startX) {
+                this.walkLeft = false;
+            } else if (!this.walkLeft && this.pos.x >= this.endX) {
+                this.walkLeft = true;
+            }
+            // Make it Walk
+            this.flipX(this.walkLeft);
+            this.vel.x += (this.walkLeft) ? -this.accel.x * me.timer.tick : this.accel.x * me.timer.tick;
+                 
+        } else {
+            this.vel.x = 0;
+        }
+         
+        // Check and Update Movement
+        this.updateMovement();
+         
+        // Update Animation if Needed
+        if (this.vel.x!=0 || this.vel.y!=0) {
+            this.parent();
+            return true;
+        }
+        return false;
+    }
+});
+
+// EnemyEntity2
+game.EnemyEntity2 = me.ObjectEntity.extend({
+    init: function(x, y, settings) {
+        // Define this Here Instead of Tiled
+        settings.image = "ex-gf-enemy";
+        settings.spritewidth = 32;
+ 
+        // Constructor
+        this.parent(x, y, settings);
+
+        // Prevent from Falling When Flying
+        this.gravity = 0;
+
+        // Sets Bounds
+        this.startX = x;
+        this.endX = x + settings.width - settings.spritewidth;
+ 
+        // Start From Right Bound
+        this.pos.x = x + settings.width - settings.spritewidth;
+        this.walkLeft = true;
+ 
+        // Set Speed
+        this.setVelocity(1, 10);
+ 
+        // Make it Collidable
+        this.collidable = true;
+
+        // Set as Enemy
+        this.type = me.game.ENEMY_OBJECT;
+
+        // Initialize HP Counter
+        this.hp = 2;
+    },
+ 
+    // Do Action Upon Collision
+    onCollision: function(res, obj) {
+        // When Collision Occurs on Top of Enemy
+        if (this.alive && (res.y > 0) && obj.falling) {
+            this.hp -= 0.25;
+            this.renderable.flicker(45);
+        }
+
+        // When Collision Occurs with SHOT Object
+        if(obj.type == 'SHOT') {
+            this.hp -= 0.5;
+            this.renderable.flicker(45);
+        }
+
+        // When Collision Occurs with MELEE Object
+        if(obj.type == 'MELEE') {
+            this.hp--;
+            this.renderable.flicker(45);
+        }
+
+        if(this.hp <= 0) {
+            me.game.remove(this);
+            game.data.score += 250;
+        }
+    },
+ 
+    // Manage Enemy Movement
+    update: function() {
+        // Don't Move if Not Seen
+        if (!this.inViewport) {
+            return false;
+        }
 
         if (this.alive) {
             if (this.walkLeft && this.pos.x <= this.startX) {
@@ -467,7 +580,11 @@ game.LevelEntity = me.LevelEntity.extend({
     onCollision : function (res, obj) {
     	// Only Moves to Next Level for Player Collision
         if(obj.type == 'PLAYER') {
-            me.levelDirector.loadLevel(this.settings.to);
+        	if(this.settings.to) {
+            	me.levelDirector.loadLevel(this.settings.to);
+        	} else {
+        		me.state.change(me.state.GAME_END);
+        	}
         }
     }
 });
