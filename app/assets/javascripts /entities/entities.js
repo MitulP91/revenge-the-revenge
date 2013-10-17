@@ -191,8 +191,9 @@ game.PlayerEntity = me.ObjectEntity.extend({
         	return true;
         }
         // Else No Update
-        return false;
         force_render = false;
+        return false;
+
 	}
 });
 

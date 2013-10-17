@@ -66,6 +66,8 @@ game.resources = [
  	{name: "level2",  type:"tmx", src: "/assets/map/level2.tmx"},
  	{name: "someword", type: "tmx", src: "/assets/map/someword.tmx"},
 
+ 	// {name: "someword-test", type: "tmx", src: "/assets/map/someword-test.tmx"},
+
  	{name: "timetunnel", type: "tmx", src: "/assets/map/witchworld.tmx"},
  	
 
