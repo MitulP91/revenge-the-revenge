@@ -228,6 +228,44 @@ game.CoinEntity = me.CollectableEntity.extend({
 		}
 	}
 });
+game.RogerEntity = me.ObjectEntity.extend({
+    init: function(x, y, settings) {
+        // Define this Here Instead of Tiled
+        settings.image = "roger";
+        settings.spritewidth = 50; //need to check this
+ 
+        // Constructor
+        this.parent(x, y, settings);
+
+        this.flipX(true);
+        // Prevent from Falling When Flying
+        //this.gravity = 0;
+
+        // Sets Bounds
+        this.startX = x;
+        this.endX = x + settings.width - settings.spritewidth;
+ 
+        // Start From Right Bound
+        this.pos.x = x + settings.width - settings.spritewidth;
+        this.walkLeft = true;
+ 
+        // Set Speed
+        this.setVelocity(1, 10);
+ 
+        // Make it Collidable
+        this.collidable = true;
+
+        // Set as Enemy
+        //this.type = me.game.ENEMY_OBJECT;
+
+
+        // Initialize HP Counter
+        this.hp = 2;
+    }
+    });
+
+
+
 
 game.EnemyEntity = me.ObjectEntity.extend({
 	init: function(x, y, settings) {
