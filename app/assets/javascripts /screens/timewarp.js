@@ -12,7 +12,7 @@ game.TimewarpScreen = me.ScreenObject.extend({
         this.tween = null;
 
 
-		this.scroller = "CRAP…… /n/n/n/n/n NOT THE TIME PORTAL………";
+		this.scroller = "CRAP…… \n\n\n\n\n NOT THE TIME PORTAL………";
 
 
 		
@@ -48,7 +48,8 @@ game.TimewarpScreen = me.ScreenObject.extend({
 	    update: function() {
 	    	 // enter pressed ?
 	        if (me.input.isKeyPressed('enter')) {
-	            me.state.change(me.state.PLAY);
+	            // me.state.change(me.state.PLAY);
+	            me.levelDirector.loadLevel('timetunnel');
 	        }
 	        return true;
 	    },
