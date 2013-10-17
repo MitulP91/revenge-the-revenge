@@ -49,7 +49,14 @@ var game = {
 
         // Set Game Over Screen Object
         me.state.set(me.state.GAMEOVER, new game.EndScreen());
-        me.state.set(me.state.Story, new game.StoryScreen());
+
+        // Set Story Screen
+        me.state.set(me.state.STORY, new game.StoryScreen());
+
+        // Set End Game Screen
+        me.state.set(me.state.GAME_END, new game.WinScreen());
+
+        
 
         // Set Transition Between States
         me.state.transition("fade", "#FFFFFF", 250);
@@ -58,8 +65,8 @@ var game = {
         me.entityPool.add("mainPlayer", game.PlayerEntity);
         me.entityPool.add("CoinEntity", game.CoinEntity);
         me.entityPool.add("EnemyEntity", game.EnemyEntity);
+        me.entityPool.add("nextLevel", game.LevelEntity);
         me.entityPool.add("EnemyEntity2", game.EnemyEntity2);
-        // me.entityPool.add("level2", game.LevelEntity);
 
         // Enable Keyboard Bindings
         me.input.bindKey(me.input.KEY.LEFT,  "left");

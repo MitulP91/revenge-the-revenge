@@ -580,7 +580,11 @@ game.LevelEntity = me.LevelEntity.extend({
     onCollision : function (res, obj) {
     	// Only Moves to Next Level for Player Collision
         if(obj.type == 'PLAYER') {
-            me.levelDirector.loadLevel(this.settings.to);
+        	if(this.settings.to) {
+            	me.levelDirector.loadLevel(this.settings.to);
+        	} else {
+        		me.state.change(me.state.GAME_END);
+        	}
         }
     }
 });

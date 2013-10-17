@@ -15,3 +15,15 @@
 //= require melonJS-0.9.9-min.js
 //= require game.js
 //= require_tree .
+
+function saveScore(save_score) {
+	console.log(save_score);
+	$('#save-score').on('click', function() {
+			$.ajax({
+		      url: '/score/create',
+		      type: 'POST',
+		      dataType: 'json',
+		      data: {score: {the_score: save_score}}
+		    });
+	});
+}
