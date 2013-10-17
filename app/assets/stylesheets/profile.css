@@ -1,0 +1,20 @@
+#profile-container {
+	text-align: center;
+}
+
+#profile-container button {
+	margin: 20px 10px;
+	background-color: red;
+	border: none;
+	padding: 15px 45px;
+	color: white;
+	border-radius: 10px;
+}
+
+#profile-container table {
+	margin: auto;
+}
+
+#comment-table {
+	display: none;
+}
