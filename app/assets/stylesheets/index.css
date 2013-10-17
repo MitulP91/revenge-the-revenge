@@ -158,5 +158,7 @@ p.highlighted {
     border: 3px solid white;
     margin: 25px auto 0px auto;
     width: 85%;
+    /*background-color: #374140*/
+    background-color: rgba(55,65,64,0.5);
 }
 
