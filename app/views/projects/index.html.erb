@@ -10,15 +10,23 @@
 <div id="comments-container">
 <!-- Comment Input -->
 
-	<h2 id="comments-h2">Comments</h2>
-	<% if current_user %>
-		<input type="text" id="comment-text"/><button id="add-comment">Add Comment</button>
-	<% end %>
+<% if current_user %>
+	<div id="comment-cont">
+		<input type="text" id="comment-text" placeholder="Add comment here..."/><button id="add-comment">Add Comment</button>
+	</div>
+<% else %>
+	<div id="hidden-add-comment">
+		<input type="text" id="comment-text" placeholder="Add comment here..."/><button id="add-comment">Add Comment</button>
+	</div>
+<% end %>
 
+<!-- Comments -->
+<div id="hold-comments">
 	<ul id="comments">
 		<% @comments.each do |comment| %>
-		<% user = User.find_by_id(comment.user_id).email %>
-			<li class='comments-li'><%= "#{comment.the_comment} created by #{user}" %></li>
+		<% user = User.find_by_id(comment.user).email.slice(0..(comment.user.email.index('@') - 1)) %>
+			<li><span class="the-comment"><%= "#{comment.the_comment}" %></span> <span class="author"><%= "created by #{user}" %></span></li>
+			<li><hr class="comment-hr"/></li>
 		<% end %>
 	</ul>
 </div>
