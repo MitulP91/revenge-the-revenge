@@ -121,21 +121,6 @@ game.PlayerEntity = me.ObjectEntity.extend({
         if(me.input.isKeyPressed('melee')) {
             if(me.timer.getTime() - this.last_melee > 500) {
                 this.renderable.setCurrentAnimation('attack', 'walk');
-                // this.melee_action = true;
-                // console.log(this.melee_action);
-                // (function(ma, obj) {
-                //     obj.melee_action = ma;
-                //     setTimeout(function() {
-                //         console.log("2" + ma);
-                //         obj.update();
-                //     }, 2000);
-                // })(this.melee_action, this);
-                // this.vel.x += 1;
-                // this.update();
-
-
-
-                
 
                 var melee = new MeleeEntity(this.pos.x, this.pos.y, this.walk_direction);
                 this.last_melee = me.timer.getTime();
@@ -676,14 +661,16 @@ game.LevelEntity = me.LevelEntity.extend({
     onCollision : function (res, obj) {
     	// Only Moves to Next Level for Player Collision
         if(obj.type == 'PLAYER') {
+        	game.data.hp = 3;
         	var current_level = me.levelDirector.getCurrentLevelId();
         	if(current_level === 'level2') {
-        		me.state.change(me.state.china);
+        		me.state.change(me.state.CHINA);
         	} else if(current_level === 'someword') {
         		me.state.change(me.state.TIMEWARP);
-        	} else if(current_level === 'witchworld') {
+        	} else if(current_level === 'timetunnel') {
         		me.state.change(me.state.ROGER);
         	} 
+
         	// if(this.settings.to) {
          //    	me.levelDirector.loadLevel(this.settings.to);
         	// } else {

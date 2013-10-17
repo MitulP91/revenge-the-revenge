@@ -12,7 +12,7 @@ game.ChinaScreen = me.ScreenObject.extend({
         this.tween = null;
 
 
-		this.scroller = "ROSEFLOWER HAS NOTHING ON ME../n BUT THOSE MEDLY WITCHES MOVED ROGER/n TO THE AGE OF ANCIENT CHINA…/n LIKE A COUPLE OF DRAGONS WILL KEEP ME FROM MY/n ONE AND ONLY ROG… BRING IN ON WITCHES!";
+		this.scroller = "ROSEFLOWER HAS \n\n\n NOTHING ON ME...\n\n\n BUT THOSE MEDLY \n\n\nWITCHES MOVED ROGER\n\n\nTO THE AGE OF\n\n\nANCIENT CHINA…\n\n\nLIKE A COUPLE\n\n\nOF DRAGONS\n\n\nWILL KEEP ME FROM MY\n\n\nONE AND ONLY ROG…\n\n\nBRING IN ON WITCHES!";
 
 
 		
@@ -25,20 +25,20 @@ game.ChinaScreen = me.ScreenObject.extend({
 
 	    	 if (this.title == null) {
             // init stuff if not yet done
-            this.title = me.loader.getImage("Time_Travel_Watch");
+            this.title = me.loader.getImage("Time_Warp");
  
             // set the scroller
-            this.scrollerfont = new me.BitmapFont("32x32_font", 32);
+            this.scrollerfont = new me.BitmapFont("atascii", 24);
         	}
 
-        	this.storyX = 50;
+        	this.storyX = 100;
 			this.storyY = 500;
 			//did not add animation tween yet
 			this.tween = new me.Tween(this).to({
         	storySize: 0,
-        	storyX: 50,
-        	storyY: -100
-    		}, 9000).start();
+        	storyX: 100,
+        	storyY: -300
+    		}, 12000).start();
 
 			// enable the keyboard
         	me.input.bindKey(me.input.KEY.ENTER, "enter", true);
@@ -48,7 +48,8 @@ game.ChinaScreen = me.ScreenObject.extend({
 	    update: function() {
 	    	 // enter pressed ?
 	        if (me.input.isKeyPressed('enter')) {
-	            me.state.change(me.state.PLAY);
+	            // me.state.change(me.state.PLAY);
+	            me.levelDirector.loadLevel('someword');
 	        }
 	        return true;
 	    },

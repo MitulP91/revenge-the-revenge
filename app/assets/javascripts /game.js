@@ -41,6 +41,14 @@ var game = {
 
     // Run when Game Resources Loaded
     "loaded" : function () {
+        // User Custom Screens
+        // var myStories = {
+        //     STORY : me.state.USER + 0,
+        //     CHINA : me.state.USER + 1,
+        //     TIMEWARP : me.state.USER + 2,
+        //     ROGER : me.state.USER + 3
+        // };
+
         // Set the Title Screen Object
         me.state.set(me.state.MENU, new game.TitleScreen());
 
@@ -50,15 +58,19 @@ var game = {
         // Set Game Over Screen Object
         me.state.set(me.state.GAMEOVER, new game.EndScreen());
 
-        // Set Story Screen
+        // Set Story Screens
+        me.state.STORY = me.state.USER + 1;
+        me.state.CHINA = me.state.USER + 2;
+        me.state.TIMEWARP = me.state.USER + 3;
+        me.state.ROGER = me.state.USER + 4;
+        
         me.state.set(me.state.STORY, new game.StoryScreen());
-        me.state.set(me.state.CHINA, new game.ChinaScreen());   
-        me.state.set(me.state.TIMEWARP, new game.TimewarpScreen());
+        me.state.set(me.state.CHINA, new game.ChinaScreen());  
+        me.state.set(me.state.TIMEWARP, new game.TimewarpScreen()); 
         me.state.set(me.state.ROGER, new game.RogerScreen());
+
         // Set End Game Screen
         me.state.set(me.state.GAME_END, new game.WinScreen());
-
-        
 
         // Set Transition Between States
         me.state.transition("fade", "#FFFFFF", 250);
@@ -77,6 +89,10 @@ var game = {
         me.input.bindKey(me.input.KEY.X,     "jump", true);
         me.input.bindKey(me.input.KEY.Z,     "shoot", true);
         me.input.bindKey(me.input.KEY.C,     "melee", true);
+        me.input.bindKey(me.input.KEY.UP, "up", true);
+        me.input.bindKey(me.input.KEY.DOWN, "down", false);
+
+
 
         // Start the Game
         me.state.change(me.state.MENU);
