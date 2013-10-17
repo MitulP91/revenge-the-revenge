@@ -11,7 +11,7 @@ game.RogerScreen = me.ScreenObject.extend({
         this.tween = null;
 
 
-		this.scroller = "I DEAFEATED THE\n\n\nEVIL WITCHES FROM\n\n\nWITCHWORLD AND SAVED\n\n\n MY BELOVED ROGER!";
+		this.scroller = "I DEFEATED THE\n\n\nEVIL WITCHES FROM\n\n\nWITCHWORLD AND SAVED\n\n\n MY BELOVED ROGER!";
 
 
 		

@@ -12,7 +12,7 @@ game.ChinaScreen = me.ScreenObject.extend({
         this.tween = null;
 
 
-		this.scroller = "SILLY ROSEFLOWER HAS\n\n NOTHING ON ME...\n\n\n\n BUT THOSE MEDLY\n\nWITCHES MOVED ROGER TO\n\n THE AGE OF ANCIENT CHINA…\n\n\n\n\nLIKE A COUPLE OF \n\nDRAGONS WILL KEEP ME\n\n FROM MY ONE AND ONLY ROG…\n\n\n\n\n\n\nBRING IN ON WITCHES";
+		this.scroller = "SILLY ROSEFLOWER HAS\n\n NOTHING ON ME...\n\n\n\n BUT THOSE MEDLY\n\nWITCHES MOVED ROGER TO\n\n THE AGE OF ANCIENT CHINA…\n\n\n\n\nLIKE A COUPLE OF \n\nDRAGONS WILL KEEP ME\n\n FROM MY ONE AND ONLY ROG…\n\n\n\n\n\n\nBRING IT ON WITCHES";
 
 
 		
