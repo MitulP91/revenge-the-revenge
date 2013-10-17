@@ -25,7 +25,6 @@ $(function(){
 		.done(function(data){
 			if (data['success']){
 				$('#darth-fader').fadeOut(2000);
-				console.log(data);
 				$div = $('<div>');
 				$img = $('<img src=' + data['gravatar'] + '/>');
 				$div.append($img);
@@ -35,13 +34,14 @@ $(function(){
 				$('#signup').remove();
 				$('#logout').fadeIn(2000);
 				$('#edit-profile').fadeIn(2000);
+				$('#hidden-add-comment').fadeIn(2000);
 			}
 			else{
-				$('body').css({'backgroundColor': 'red'});
+				// $('body').css({'backgroundColor': 'red'});
 			}
 		})
 		.fail(function(){
-			$('body').css({'backgroundColor': 'red'});
+			// $('body').css({'backgroundColor': 'red'});
 		});
 		return false;
 	});

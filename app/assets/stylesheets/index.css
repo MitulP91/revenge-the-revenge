@@ -49,3 +49,49 @@ p.highlighted {
     opacity : 1;
     background-color : #CCDDFF;
 }
+
+#hidden-add-comment {
+    text-align: center;
+    display: none;
+}
+
+#comment-text {
+    width: 80%;
+    height: 30px;
+    margin-top: 15px;
+}
+
+#add-comment {
+    height: 35px;
+    margin-left: 0;
+    background-color: #D9CB9E;
+}
+
+#comment-cont {
+    text-align: center;
+}
+
+#comments {
+    list-style-type: none;
+    text-align: center;
+    margin-left: -8%;
+}
+
+#hold-comments {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.the-comment {
+    
+}
+
+.author {
+    font-size: 10px;
+    font-color: lightgray;
+}
+
+.comment-hr {
+    width: 70%;
+}
+

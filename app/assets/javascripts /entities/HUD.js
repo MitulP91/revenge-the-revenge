@@ -21,8 +21,8 @@ game.HUD.Container = me.ObjectContainer.extend({
 		this.name = "HUD";
 		
 		// add our child score object at the top left corner
-		this.addChild(new game.HUD.ScoreItem(580, 410));
-		this.addChild(new game.HUD.HealthItem(200, 410));
+		this.addChild(new game.HUD.ScoreItem(630, 430));
+		this.addChild(new game.HUD.HealthItem(160, 430));
 	}
 });
 
@@ -36,7 +36,7 @@ game.HUD.ScoreItem = me.Renderable.extend({
 		this.parent(new me.Vector2d(x, y), 10, 10); 
 		
 		// Create Font
-		this.font = new me.BitmapFont("atascii", {x:24});
+		this.font = new me.BitmapFont("atascii-white", {x:24});
 		this.font.alignText = "bottom";
 		this.font.set("right", 1.6);
 
@@ -60,7 +60,7 @@ game.HUD.ScoreItem = me.Renderable.extend({
 
 	// Draw Score onto the HUD
 	draw : function (context) {
-		this.font.draw (context, "SCORE:" + game.data.score, this.pos.x, this.pos.y);
+		this.font.draw (context, game.data.score, this.pos.x, this.pos.y);
 	}
 
 });
@@ -74,7 +74,7 @@ game.HUD.HealthItem = me.Renderable.extend({
 		this.parent(new me.Vector2d(x, y), 10, 10); 
 		
 		// Create Font
-		this.font = new me.BitmapFont("atascii", {x:24});
+		this.font = new me.BitmapFont("atascii-white", {x:24});
 		this.font.alignText = "bottom";
 		this.font.set("right", 1.6);
 
