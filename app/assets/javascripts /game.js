@@ -76,7 +76,7 @@ var game = {
         me.input.bindKey(me.input.KEY.X,     "jump", true);
         me.input.bindKey(me.input.KEY.Z,     "shoot", true);
         me.input.bindKey(me.input.KEY.C,     "melee", true);
-        me.input.bindKey(me.input.KEY.UP, "up", true);
+        me.input.bindKey(me.input.KEY.UP, "up", false);
         me.input.bindKey(me.input.KEY.DOWN, "down", false);
 
 
