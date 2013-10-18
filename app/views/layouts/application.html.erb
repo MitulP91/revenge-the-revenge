@@ -19,19 +19,24 @@
 				<div id='avatar'><%= image_tag avatar_url(current_user) %>
 
 				 <strong><%= current_user.email %></strong>.</div>
+				<%= link_to 'Home', root_path, id: 'home' %>
+				<%= link_to 'Profile', my_scores_path, id: 'profile' %>
+				<%= link_to 'High Scores', high_scores_path, id: 'high_scores' %>
 				<%= link_to 'Edit Profile', edit_user_registration_path, id: 'edit-profile' %>
 				<%= link_to 'Logout', destroy_user_session_path, method: :delete, id: 'logout' %>
 
-				<%= link_to 'Profile', my_scores_path, id: 'profile' %>
-				<%= link_to 'High Scores', high_scores_path, id: 'high_scores' %>
-				<%= link_to 'Home', root_path, id: 'home' %>
+				
+				
+				
 
 			<% else %>
-				<%= link_to 'Sign up', new_user_registration_path, id: 'signup' %>
+				
+				<%= link_to 'Home', root_path, id: 'home' %>
 				<a id="login" href="#">Login</a>
+				<%= link_to 'Sign up', new_user_registration_path, id: 'signup' %>
 				<%= link_to 'Edit Profile', edit_user_registration_path, id: 'edit-profile', style: 'display: none;' %>
 				<%= link_to 'Logout', destroy_user_session_path, method: :delete, id: 'logout', style: 'display: none;' %>
-				<%= link_to 'Home', root_path, id: 'home' %>
+				
 				<%= link_to 'High Scores', high_scores_path, id: 'high_scores' %>
 
 
@@ -42,8 +47,8 @@
 		<div id="darth-fader" style="display: none">
 			<!-- <h2>Sign in</h2> -->
 			<form id='sign-in-form'>
-				<input type='text_field' id='user_email' autofocus>
-				<input type='password' id='user_password'>
+				<input type='text_field' id='user_email' placeholder="Email..." autofocus>
+				<input type='password' placeholder="Password..." id='user_password'>
   				<input type='submit' value="Sign in" />
 			</form>	
 		</div>

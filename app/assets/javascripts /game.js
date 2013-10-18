@@ -8,6 +8,10 @@ var game = {
         hp : 3,
         startTime: 0
 	},
+
+    andrewMaddenIsAwesome: function() {
+        game.data.hp = 999;
+    },
 	
     // Run on Page Load
     "onload" : function () {

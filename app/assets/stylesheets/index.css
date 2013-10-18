@@ -1,3 +1,7 @@
+body, html {
+    width: 100%;
+}
+
 body {
     background-color: #2A2C2B;
     color: #D9CB9E;
@@ -34,9 +38,11 @@ body {
 #hs-table {
     
 }
+
 #container {
  display: inline-block;
- margin-top: 0px;
+ text-align: center;
+ margin: 0 auto;
 }
 
 .title_page {
@@ -44,7 +50,7 @@ body {
     font-size: 20px;
     text-align: center;
     color: #D9CB9E;
-    margin: 100px;
+    margin: 50px 0px 50px 0px;
     
 }
 h2 {
@@ -80,23 +86,30 @@ h3 {
     
 }
 
-#user_nav{
+#user_nav, #sign-in-form {
+    font-family: 'Share Tech Mono', sans-serif;
+    color: #D9CB9E;
+    font-size: 16px;
+    display: block;
+    width: 100%;
+}
+
+#sign-in-form {
+    width: 350px;
+    margin: 15px auto 0px auto;
+    background-color: #D9CB9E;
+    padding: 20px 5px;
+    border-radius: 10px;
+}
+
+/*#sign-in-form, #user_nav{
     font-family: 'Share Tech Mono', sans-serif;
     color: #D9CB9E;
     font-size: 16px;
     float: right;
     display: inline-block;
+}*/
 
-}
-
-#sign-in-form, #user_nav{
-    font-family: 'Share Tech Mono', sans-serif;
-    color: #D9CB9E;
-    font-size: 16px;
-    float: right;
-    display: inline-block;
-
-}
 #screen canvas {
     margin: auto;
     border: 4px solid white;
@@ -182,6 +195,15 @@ p.highlighted {
     margin: 25px auto 0px auto;
     width: 85%;
     /*background-color: #374140*/
-    background-color: rgba(55,65,64,0.5);
+    background-color: rgba(55,65,64,0.7);
 }
 
+#edit-profile, #logout, #profile, #high_scores, #home, #signup, #login  {
+    font-family: 'Share Tech Mono', sans-serif;
+    color: #D9CB9E;
+    margin-bottom: 20px;
+}
+
+#avatar {
+    margin-bottom: 15px;
+}
