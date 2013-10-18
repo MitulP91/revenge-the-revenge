@@ -716,9 +716,7 @@ game.LevelEntity = me.LevelEntity.extend({
         		me.state.change(me.state.TIMEWARP);
         	} else if(current_level === 'timetunnel') {
         		me.state.change(me.state.ROGER);
-        	} else if(current_level === 'love') {
-                me.state.change(me.state.GAME_END);
-            }
+        	} 
 
         	// if(this.settings.to) {
             //    	me.levelDirector.loadLevel(this.settings.to);

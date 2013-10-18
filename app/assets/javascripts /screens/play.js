@@ -9,7 +9,7 @@ game.PlayScreen = me.ScreenObject.extend({
 
 		// me.levelDirector.loadLevel('someword');
 
-		me.levelDirector.loadLevel('love');
+		me.levelDirector.loadLevel('level2');
 
 		// Reset the Score
 		game.data.score = 0;

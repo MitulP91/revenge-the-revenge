@@ -47,9 +47,9 @@ game.RogerScreen = me.ScreenObject.extend({
 	    update: function() {
 	    	 // enter pressed ?
 	        if (me.input.isKeyPressed('enter')) {
-	           me.levelDirector.loadLevel('love');
+	           // me.levelDirector.loadLevel('love');
 
-	            //me.state.change(me.state.GAME_END);
+	            me.state.change(me.state.GAME_END);
 	        }
 	        return true;
 	    },
