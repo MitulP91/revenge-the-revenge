@@ -9,7 +9,7 @@ game.resources = [
 
 	{name: "Portal_skill_icon",  type:"image", src: "/assets/map/Portal_skill_icon.png"},
 	{name: "mountains",  type:"image", src: "/assets/map/Mountains.png"},
-
+	{name: "Inq - Volcano",  type:"image", src: "/assets/map/Inq - Volcano.png"},
 
 	// Meta Tileset
 	{name: "metatiles32x32",  type:"image", src: "/assets/map/metatiles32x32.png"},
@@ -55,7 +55,8 @@ game.resources = [
     {name: "parallax_background2",  type:"image", src: "/assets/parallax_background2.png"},
     {name: "gta2tiles",  type:"image", src: "/assets/map/gta2tiles.png"},
     
-    {name: "parallax", type: "image", src: "assets/area01_bkg0.png"},
+    {name: "area01_bkg0", type: "image", src: "assets/area01_bkg0.png"},
+    {name: "area01_bkg1", type: "image", src: "assets/area01_bkg1.png"},
 
 	/* Atlases 
 	 * @example
@@ -74,6 +75,7 @@ game.resources = [
  	// {name: "someword", type: "tmx", src: "/assets/map/someword-test.tmx"},
 
  	{name: "timetunnel", type: "tmx", src: "/assets/map/witchworld.tmx"},
+ 	{name: "love", type: "tmx", src: "/assets/map/new.tmx"}
  	
 
 	/* Background music. 

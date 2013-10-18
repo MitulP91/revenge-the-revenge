@@ -142,6 +142,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
 
         // Set Gameover if You Fall Through Bottom
         if(this.pos.y > 460) {
+            game.data.hp = 0;
 			me.state.change(me.state.GAMEOVER);
 		}
 
@@ -228,6 +229,8 @@ game.CoinEntity = me.CollectableEntity.extend({
 		}
 	}
 });
+
+// Roger Entity
 game.RogerEntity = me.ObjectEntity.extend({
     init: function(x, y, settings) {
         // Define this Here Instead of Tiled
@@ -254,19 +257,12 @@ game.RogerEntity = me.ObjectEntity.extend({
  
         // Make it Collidable
         this.collidable = true;
-
-        // Set as Enemy
-        //this.type = me.game.ENEMY_OBJECT;
-
-
-        // Initialize HP Counter
-        this.hp = 2;
     }
-    });
+});
 
 
 
-
+// Enemy Entities
 game.EnemyEntity = me.ObjectEntity.extend({
 	init: function(x, y, settings) {
         // Define this Here Instead of Tiled
@@ -720,7 +716,9 @@ game.LevelEntity = me.LevelEntity.extend({
         		me.state.change(me.state.TIMEWARP);
         	} else if(current_level === 'timetunnel') {
         		me.state.change(me.state.ROGER);
-        	} 
+        	} else if(current_level === 'love') {
+                me.state.change(me.state.GAME_END);
+            }
 
         	// if(this.settings.to) {
             //    	me.levelDirector.loadLevel(this.settings.to);
@@ -731,5 +729,139 @@ game.LevelEntity = me.LevelEntity.extend({
     }
 });
 
+// Final Animation Entities
+game.AlasandraEntity = me.ObjectEntity.extend({
+    init : function(x, y, settings) {
+        settings.image = 'main-player'
+        settings.spritewidth = 100;
 
+        this.parent(x,y,settings);
 
+        // Sets Bounds
+        this.startX = x;
+        this.endX = x + settings.width - settings.spritewidth;
+ 
+        // Start From Left Bound
+        this.pos.x = x + settings.spritewidth;
+        this.walkLeft = false;
+ 
+        // Set Speed
+        this.setVelocity(1, 10);
+ 
+        // Make it Collidable
+        this.collidable = true;
+
+        // Animations
+        this.renderable.addAnimation('walk', [0,1,2]);
+        this.renderable.setCurrentAnimation('walk');
+
+        // Set as Enemy
+        this.type = 'ALASANDRA';
+    },
+
+    onCollision : function(res, obj) {
+        if(obj.type === 'ROGER') {
+            this.vel.x = 0;
+            this.accel.x = 0;
+            // Find A Way to Add Heart Animation Here.
+            // var heart = new HeartEntity();
+        }
+    },
+
+    // Manage Alasandra Movement
+    update: function() {
+        // Don't Move if Not Seen
+        if (!this.inViewport) {
+            return false;
+        }
+
+        if (this.alive) {
+            if (this.walkLeft && this.pos.x <= this.startX) {
+                this.walkLeft = false;
+            } else if (!this.walkLeft && this.pos.x >= this.endX) {
+                this.walkLeft = true;
+            }
+            // Make it Walk
+            this.flipX(this.walkLeft);
+            this.vel.x += (this.walkLeft) ? -this.accel.x * me.timer.tick : this.accel.x * me.timer.tick;
+                 
+        } else {
+            this.vel.x = 0;
+        }
+         
+        // Check and Update Movement
+        this.updateMovement();
+         
+        // Update Animation if Needed
+        if (this.vel.x!=0 || this.vel.y!=0) {
+            this.parent();
+            return true;
+        }
+        return false;
+    }
+});
+
+game.RogerEntity2 = me.ObjectEntity.extend({
+    init : function(x, y, settings) {
+        settings.image = 'roger';
+        settings.spritewidth = 50;
+
+        this.parent(x,y,settings);
+
+        // Sets Bounds
+        this.startX = x;
+        this.endX = x + settings.width - settings.spritewidth;
+ 
+        // Start From Right Bound
+        this.pos.x = x + settings.width - settings.spritewidth;
+        this.walkLeft = true;
+ 
+        // Set Speed
+        this.setVelocity(2, 10);
+ 
+        // Make it Collidable
+        this.collidable = true;
+
+        // Set as Enemy
+        this.type = 'ROGER';
+    },
+
+    onCollision : function(res, obj) {
+        if(obj.type === 'ALASANDRA') {
+            this.vel.x = 0;
+            this.accel.x = 0;
+        }
+    },
+
+    // Manage Roger Movement
+    update: function() {
+        // Don't Move if Not Seen
+        if (!this.inViewport) {
+            return false;
+        }
+
+        if (this.alive) {
+            if (this.walkLeft && this.pos.x <= this.startX) {
+                this.walkLeft = false;
+            } else if (!this.walkLeft && this.pos.x >= this.endX) {
+                this.walkLeft = true;
+            }
+            // Make it Walk
+            this.flipX(this.walkLeft);
+            this.vel.x += (this.walkLeft) ? -this.accel.x * me.timer.tick : this.accel.x * me.timer.tick;
+                 
+        } else {
+            this.vel.x = 0;
+        }
+         
+        // Check and Update Movement
+        this.updateMovement();
+         
+        // Update Animation if Needed
+        if (this.vel.x!=0 || this.vel.y!=0) {
+            this.parent();
+            return true;
+        }
+        return false;
+    }
+});
