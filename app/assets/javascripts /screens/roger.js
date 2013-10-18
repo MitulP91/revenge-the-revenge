@@ -11,7 +11,7 @@ game.RogerScreen = me.ScreenObject.extend({
         this.tween = null;
 
 
-		this.scroller = "I DEAFEATED THE\n\n\nEVIL WITCHES FROM\n\n\nWITCHWORLD AND SAVED\n\n\n MY BELOVED ROGER!";
+		this.scroller = "I DEFEATED THE\n\n\nEVIL WITCHES FROM\n\n\nWITCHWORLD AND SAVED\n\n\n MY BELOVED ROGER!";
 
 
 		
@@ -36,7 +36,7 @@ game.RogerScreen = me.ScreenObject.extend({
 			this.tween = new me.Tween(this).to({
         	storySize: 0,
         	storyX: 100,
-        	storyY: -100
+        	storyY: -500
     		}, 12000).start();
 
 			// enable the keyboard

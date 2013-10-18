@@ -82,6 +82,9 @@ var game = {
          // Add Player Entity to Entity Pool
         me.entityPool.add("mainPlayer", game.PlayerEntity);
         me.entityPool.add("CoinEntity", game.CoinEntity);
+        
+        
+        me.entityPool.add("RogerEntity", game.RogerEntity);
         me.entityPool.add("nextLevel", game.LevelEntity);
         me.entityPool.add("EnemyEntity", game.EnemyEntity);
         me.entityPool.add("EnemyEntity2", game.EnemyEntity2);
