@@ -723,7 +723,9 @@ game.LevelEntity = me.LevelEntity.extend({
         		me.state.change(me.state.TIMEWARP);
         	} else if(current_level === 'timetunnel') {
         		me.state.change(me.state.ROGER);
-        	} 
+        	} else if(current_level === 'love') {
+                me.state.change(me.state.GAME_END);
+            }
 
         	// if(this.settings.to) {
             //    	me.levelDirector.loadLevel(this.settings.to);
@@ -733,6 +735,134 @@ game.LevelEntity = me.LevelEntity.extend({
         }
     }
 });
+game.AlasandraEntity = me.EnemyEntity.extend({
+    init: function(x, y, settings) {
+        // Define this Here Instead of Tiled
+        settings.image = "main-player";
+        settings.spritewidth = 30;
+ 
+        // Constructor
+        this.parent(x, y, settings);
+
+        this.setVelocity(5, 15);
+
+
+
+        // Sets Bounds
+        this.startX = x;
+        this.endX = x + settings.width - settings.spritewidth;
+ 
+        // Start From Right Bound
+        this.pos.x = x + settings.width - settings.spritewidth;
+        this.walkLeft = true;
+ 
+        // Set Speed
+        this.setVelocity(1, 10);
+ 
+        // Make it Collidable
+        this.collidable = true;
+
+        // Set as Enemy
+        this.type = me.game.ENEMY_OBJECT;
+
+        
+    },
+ 
+    // Do Action Upon Collision
+    onCollision: function(res, obj) {
+        // When Collision Occurs on Top of Enemy
+        if (this.alive && (res.y > 0) && obj.falling) {
+            this.hp -= 0.25;
+            this.renderable.flicker(45);
+        }
+
+        // When Collision Occurs with SHOT Object
+        if(obj.type == 'SHOT') {
+            this.hp -= 0.5;
+            this.renderable.flicker(45);
+        }
+
+        // When Collision Occurs with MELEE Object
+        if(obj.type == 'MELEE') {
+            this.hp--;
+            this.renderable.flicker(45);
+        }
+
+        if(this.hp <= 0) {
+            me.game.remove(this);
+            game.data.score += 250;
+        }
+    },
+ 
+    // Manage Enemy Movement
+    update: function() {
+       
+    }
+    game.OtherRogEntity = me.EnemyEntity.extend({
+    init: function(x, y, settings) {
+        // Define this Here Instead of Tiled
+        settings.image = "main-player";
+        settings.spritewidth = 50;
+ 
+        // Constructor
+        this.parent(x, y, settings);
+
+        this.setVelocity(5, 15);
+
+
+
+        // Sets Bounds
+        this.startX = x;
+        this.endX = x + settings.width - settings.spritewidth;
+ 
+        // Start From Right Bound
+        this.pos.x = x + settings.width - settings.spritewidth;
+        this.walkLeft = true;
+ 
+        // Set Speed
+        this.setVelocity(1, 10);
+ 
+        // Make it Collidable
+        this.collidable = true;
+
+        // Set as Enemy
+        this.type = me.game.ENEMY_OBJECT;
+
+        
+    },
+ 
+    // Do Action Upon Collision
+    onCollision: function(res, obj) {
+        // When Collision Occurs on Top of Enemy
+        if (this.alive && (res.y > 0) && obj.falling) {
+            this.hp -= 0.25;
+            this.renderable.flicker(45);
+        }
+
+        // When Collision Occurs with SHOT Object
+        if(obj.type == 'SHOT') {
+            this.hp -= 0.5;
+            this.renderable.flicker(45);
+        }
+
+        // When Collision Occurs with MELEE Object
+        if(obj.type == 'MELEE') {
+            this.hp--;
+            this.renderable.flicker(45);
+        }
+
+        if(this.hp <= 0) {
+            me.game.remove(this);
+            game.data.score += 250;
+        }
+    },
+ 
+    // Manage Enemy Movement
+    update: function() {
+       
+    }
+});
+
 
 // Final Animation Entities
 game.AlasandraEntity = me.ObjectEntity.extend({

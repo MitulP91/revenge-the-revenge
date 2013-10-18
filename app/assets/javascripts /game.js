@@ -67,11 +67,15 @@ var game = {
         me.state.CHINA = me.state.USER + 2;
         me.state.TIMEWARP = me.state.USER + 3;
         me.state.ROGER = me.state.USER + 4;
+
         
         me.state.set(me.state.STORY, new game.StoryScreen());
         me.state.set(me.state.CHINA, new game.ChinaScreen());  
         me.state.set(me.state.TIMEWARP, new game.TimewarpScreen()); 
         me.state.set(me.state.ROGER, new game.RogerScreen());
+
+        //final animation
+        //me.state.set(me.state.LOVE, new game.LOVEScreen());
 
         // Set End Game Screen
         me.state.set(me.state.GAME_END, new game.WinScreen());
@@ -89,6 +93,8 @@ var game = {
         me.entityPool.add("EnemyEntity", game.EnemyEntity);
         me.entityPool.add("EnemyEntity2", game.EnemyEntity2);
         me.entityPool.add("EnemyEntity3", game.EnemyEntity3);
+        me.entityPool.add("AlasandraEntity", game.AlasandraEntity);
+        me.entityPool.add("OtherRogEntity", game.OtherRogEntity);
 
         // Enable Keyboard Bindings
         me.input.bindKey(me.input.KEY.LEFT,  "left");
