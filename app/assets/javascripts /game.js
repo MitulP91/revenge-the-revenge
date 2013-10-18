@@ -11,6 +11,7 @@ var game = {
 
     andrewMaddenIsAwesome: function() {
         game.data.hp = 999;
+        me.game.getEntityByProp('name', 'mainPlayer')[0].hp = 999;
     },
 	
     // Run on Page Load
