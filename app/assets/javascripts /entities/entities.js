@@ -142,7 +142,6 @@ game.PlayerEntity = me.ObjectEntity.extend({
 
         // Set Gameover if You Fall Through Bottom
         if(this.pos.y > 460) {
-            game.data.hp = 0;
 			me.state.change(me.state.GAMEOVER);
 		}
 
