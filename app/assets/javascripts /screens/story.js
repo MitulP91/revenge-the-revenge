@@ -38,7 +38,7 @@ game.StoryScreen = me.ScreenObject.extend({
         	storySize: 0,
         	storyX: 50,
         	storyY: -20000
-    		}, 500000).start();
+    		}, 250000).start();
 
 			// enable the keyboard
         	me.input.bindKey(me.input.KEY.ENTER, "enter", true);

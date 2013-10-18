@@ -38,7 +38,7 @@ game.ChinaScreen = me.ScreenObject.extend({
         	storySize: 0,
         	storyX: 50,
         	storyY: -4000
-    		}, 190000).start();
+    		}, 70000).start();
 
     		
 
