@@ -37,11 +37,13 @@ $(function(){
 				$('#hidden-add-comment').fadeIn(2000);
 			}
 			else{
-				// $('body').css({'backgroundColor': 'red'});
+				$fail = $('<p>This account does not exist!</p>')
+				$('body').append($fail);
 			}
 		})
 		.fail(function(){
-			// $('body').css({'backgroundColor': 'red'});
+			$fail = $('<p>This account does not exist!</p>')
+			$('body').append($fail);
 		});
 		return false;
 	});
