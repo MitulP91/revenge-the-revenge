@@ -37,8 +37,10 @@ game.ChinaScreen = me.ScreenObject.extend({
 			this.tween = new me.Tween(this).to({
         	storySize: 0,
         	storyX: 50,
-        	storyY: -1000
-    		}, 17000).start();
+        	storyY: -4000
+    		}, 190000).start();
+
+    		
 
 			// enable the keyboard
         	me.input.bindKey(me.input.KEY.ENTER, "enter", true);
@@ -47,6 +49,8 @@ game.ChinaScreen = me.ScreenObject.extend({
 	    // update function
 	    update: function() {
 	    	 // enter pressed ?
+	        
+
 	        if (me.input.isKeyPressed('enter')) {
 	            // me.state.change(me.state.PLAY);
 	            me.levelDirector.loadLevel('someword');
