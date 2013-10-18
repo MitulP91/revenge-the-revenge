@@ -38,7 +38,7 @@ game.TimewarpScreen = me.ScreenObject.extend({
         	storySize: 0,
         	storyX: 100,
         	storyY: -1000
-    		}, 170000).start();
+    		}, 17000).start();
 
 			// enable the keyboard
         	me.input.bindKey(me.input.KEY.ENTER, "enter", true);
