@@ -4,12 +4,11 @@ game.resources = [
 	 * @example
 	 * {name: "example", type:"image", src: "data/img/example.png"},
 	 */
-	 // Area01 Tileset
+	// Area01 Tileset
 	{name: "build_atlas",  type:"image", src: "/assets/map/build_atlas.png"},
 
 	{name: "Portal_skill_icon",  type:"image", src: "/assets/map/Portal_skill_icon.png"},
 	{name: "mountains",  type:"image", src: "/assets/map/Mountains.png"},
-
 
 	// Meta Tileset
 	{name: "metatiles32x32",  type:"image", src: "/assets/map/metatiles32x32.png"},
@@ -21,16 +20,12 @@ game.resources = [
     {name: "great_wall_2",  type:"image", src: "/assets/great_wall_2.png"},
     {name: "time_tunnel",  type:"image", src: "/assets/Time_Tunnel.png"},
 
-
-    // Title Screen Background
-    
-   {name: "death_screen",         type:"image", src: "/assets/gui/you-died.png"},
+    // Title Screen Background   
+	{name: "death_screen",         type:"image", src: "/assets/gui/you-died.png"},
     {name: "Time_Warp",         type:"image", src: "/assets/gui/resizedimage.png"},
     
-
     // Spinning Coin Spritesheet
     {name: "spinning_coin_gold",  type:"image", src: "/assets/sprite/spinning_coin_gold.png"},
-
     
     //Roger
     {name: "roger",  type:"image", src: "/assets/sprite/roger.png"},
@@ -54,7 +49,6 @@ game.resources = [
     {name: "parallax_background1",  type:"image", src: "/assets/parallax_background1.png"},
     {name: "parallax_background2",  type:"image", src: "/assets/parallax_background2.png"},
     {name: "gta2tiles",  type:"image", src: "/assets/map/gta2tiles.png"},
-    
     {name: "parallax", type: "image", src: "assets/area01_bkg0.png"},
 
 	/* Atlases 
@@ -66,20 +60,20 @@ game.resources = [
 	 * @example
 	 * {name: "example01", type: "tmx", src: "data/map/example01.tmx"},
 	 * {name: "example01", type: "tmx", src: "data/map/example01.json"},
- 	 */
- 	
- 	{name: "level2",  type:"tmx", src: "/assets/map/level2.tmx"},
- 	{name: "someword", type: "tmx", src: "/assets/map/someword.tmx"},
+	 */
+	
+	{name: "level2",  type:"tmx", src: "/assets/map/level2.tmx"},
+	{name: "someword", type: "tmx", src: "/assets/map/someword.tmx"},
 
- 	// {name: "someword", type: "tmx", src: "/assets/map/someword-test.tmx"},
+	// {name: "someword", type: "tmx", src: "/assets/map/someword-test.tmx"},
 
- 	{name: "timetunnel", type: "tmx", src: "/assets/map/witchworld.tmx"},
- 	
+	{name: "timetunnel", type: "tmx", src: "/assets/map/witchworld.tmx"},
+	
 
 	/* Background music. 
 	 * @example
 	 * {name: "example_bgm", type: "audio", src: "data/bgm/", channel : 1},
-	 */	
+	 */
 	// {name: "dst-inertexponent", type: "audio", src: "/public/audios/dst-inertexponent.mp3", channel : 1},
 
 	/* Sound effects. 
