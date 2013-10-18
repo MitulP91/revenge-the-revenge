@@ -64,9 +64,9 @@ game.WinScreen = me.ScreenObject.extend({
 	draw: function(context) {
 		context.drawImage(this.title, 0, 0);
 
-		this.font.draw(context, "CONGRATULATIONS!", 180, 210);
-		this.font.draw(context, "YOU WON!", 100, 300);
-		this.font.draw(context, "SCORE: " + game.data.score, 180, 350);
+		this.font.draw(context, "CONGRATULATIONS!", 100, 150);
+		this.font.draw(context, "YOU WON!", 170, 200);
+		this.font.draw(context, "SCORE: " + game.data.score, 140, 280);
 		this.scrollerfont.draw(context, this.scroller, this.scrollerpos, 440);
 	},
 

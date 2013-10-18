@@ -142,7 +142,6 @@ game.PlayerEntity = me.ObjectEntity.extend({
 
         // Set Gameover if You Fall Through Bottom
         if(this.pos.y > 460) {
-            game.data.hp = 0;
 			me.state.change(me.state.GAMEOVER);
 		}
 
@@ -716,9 +715,7 @@ game.LevelEntity = me.LevelEntity.extend({
         		me.state.change(me.state.TIMEWARP);
         	} else if(current_level === 'timetunnel') {
         		me.state.change(me.state.ROGER);
-        	} else if(current_level === 'love') {
-                me.state.change(me.state.GAME_END);
-            }
+        	} 
 
         	// if(this.settings.to) {
             //    	me.levelDirector.loadLevel(this.settings.to);
@@ -761,6 +758,7 @@ game.AlasandraEntity = me.ObjectEntity.extend({
 
     onCollision : function(res, obj) {
         if(obj.type === 'ROGER') {
+            console.log('blah');
             this.vel.x = 0;
             this.accel.x = 0;
             // Find A Way to Add Heart Animation Here.
@@ -817,7 +815,7 @@ game.RogerEntity2 = me.ObjectEntity.extend({
         this.walkLeft = true;
  
         // Set Speed
-        this.setVelocity(2, 10);
+        this.setVelocity(3, 10);
  
         // Make it Collidable
         this.collidable = true;
@@ -828,6 +826,7 @@ game.RogerEntity2 = me.ObjectEntity.extend({
 
     onCollision : function(res, obj) {
         if(obj.type === 'ALASANDRA') {
+            console.log('collided');
             this.vel.x = 0;
             this.accel.x = 0;
         }
