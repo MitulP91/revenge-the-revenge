@@ -761,6 +761,7 @@ game.AlasandraEntity = me.ObjectEntity.extend({
 
     onCollision : function(res, obj) {
         if(obj.type === 'ROGER') {
+            console.log('blah');
             this.vel.x = 0;
             this.accel.x = 0;
             // Find A Way to Add Heart Animation Here.
@@ -817,7 +818,7 @@ game.RogerEntity2 = me.ObjectEntity.extend({
         this.walkLeft = true;
  
         // Set Speed
-        this.setVelocity(2, 10);
+        this.setVelocity(3, 10);
  
         // Make it Collidable
         this.collidable = true;
@@ -828,6 +829,7 @@ game.RogerEntity2 = me.ObjectEntity.extend({
 
     onCollision : function(res, obj) {
         if(obj.type === 'ALASANDRA') {
+            console.log('collided');
             this.vel.x = 0;
             this.accel.x = 0;
         }
