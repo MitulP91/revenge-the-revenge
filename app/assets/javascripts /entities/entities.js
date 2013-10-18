@@ -92,8 +92,53 @@ game.PlayerEntity = me.ObjectEntity.extend({
 
             // Update the Entity Velocity
             this.vel.x += this.accel.x * me.timer.tick;
+        // } else if (me.input.isKeyPressed('up')) {
+        //     force_render = false;
+        //     // Set Animation
+        //     // this.renderable.setCurrentAnimation("walk");
+
+        //     // Flip Sprite on Horizontal Axis and Fix Turnaround Bug
+        //     if(this.walk_direction === false) {
+        //         this.flipX(true);
+        //         this.pos.x -= 55;
+        //     }
+
+        //     // Fix Collision Box of Player Sprite
+        //     this.collisionBox.width = 100;
+        //     if(this.collisionBox.width > 40) {
+        //         // this.collisionBox.width -= 60;
+        //         this.updateColRect(70, 28, -1, 55);
+        //     }
+
+        //     this.walk_direction = true;
+
+        //     // Update the Entity Velocity
+        //     this.vel.y -= this.accel.x * me.timer.tick;
+        // } else if (me.input.isKeyPressed('down')) {
+        //     force_render = false;
+        //     // Set Animation
+        //     // this.renderable.setCurrentAnimation("walk");
+
+        //     // Flip Sprite on Horizontal Axis and Fix Turnaround Bug
+        //     if(this.walk_direction === false) {
+        //         this.flipX(true);
+        //         this.pos.x -= 55;
+        //     }
+
+        //     // Fix Collision Box of Player Sprite
+        //     this.collisionBox.width = 100;
+        //     if(this.collisionBox.width > 40) {
+        //         // this.collisionBox.width -= 60;
+        //         this.updateColRect(70, 28, -1, 55);
+        //     }
+
+        //     this.walk_direction = true;
+
+        //     // Update the Entity Velocity
+        //     this.vel.y += this.accel.x * me.timer.tick;
         } else {
             this.vel.x = 0;
+            // this.vel.y = 0;
         }
 
         // Set Motion for Jump

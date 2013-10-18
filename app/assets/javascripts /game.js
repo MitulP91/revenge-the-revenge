@@ -13,6 +13,18 @@ var game = {
         game.data.hp = 999;
         me.game.getEntityByProp('name', 'mainPlayer')[0].hp = 999;
     },
+
+    // andrewMaddenCanFly: function() {
+    //     me.game.getEntityByProp('name', 'mainPlayer')[0].gravity = 0;
+    //     me.input.unbindKey(me.input.KEY.UP);
+    //     me.input.unbindKey(me.input.KEY.DOWN);
+    //     me.input.unbindKey(me.input.KEY.LEFT);
+    //     me.input.unbindKey(me.input.KEY.RIGHT);
+    //     me.input.bindKey(me.input.KEY.W,     "up");
+    //     me.input.bindKey(me.input.KEY.A,     "left");
+    //     me.input.bindKey(me.input.KEY.S,     "down");
+    //     me.input.bindKey(me.input.KEY.D,     "right");
+    // },
 	
     // Run on Page Load
     "onload" : function () {
@@ -103,6 +115,7 @@ var game = {
         me.input.bindKey(me.input.KEY.UP,     "jump");
         me.input.bindKey(me.input.KEY.SHIFT,     "shoot");
         me.input.bindKey(me.input.KEY.ALT,     "melee");
+        me.input.bindKey(me.input.KEY.DOWN,     "down");
 
 
 
