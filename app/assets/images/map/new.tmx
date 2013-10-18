@@ -34,14 +34,14 @@
   </data>
  </layer>
  <objectgroup name="EnemyEnities" width="20" height="15">
-  <object name="AlasandraEntity" x="64" y="320" width="256" height="64">
+  <object name="AlasandraEntity" x="95" y="320" width="256" height="64">
    <properties>
     <property name="image" value="main-player"/>
     <property name="spriteheight" value="55"/>
     <property name="spritewidth" value="100"/>
    </properties>
   </object>
-  <object name="OtherRogEntity" x="320" y="320" width="256" height="64">
+  <object name="OtherRogEntity" x="284" y="321" width="256" height="64">
    <properties>
     <property name="image" value="main-player"/>
     <property name="spriteheight" value="61"/>

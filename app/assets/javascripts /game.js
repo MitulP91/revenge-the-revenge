@@ -94,7 +94,7 @@ var game = {
         me.entityPool.add("EnemyEntity2", game.EnemyEntity2);
         me.entityPool.add("EnemyEntity3", game.EnemyEntity3);
         me.entityPool.add("AlasandraEntity", game.AlasandraEntity);
-        me.entityPool.add("OtherRogEntity", game.OtherRogEntity);
+        me.entityPool.add("OtherRogEntity", game.RogerEntity2);
 
         // Enable Keyboard Bindings
         me.input.bindKey(me.input.KEY.LEFT,  "left");

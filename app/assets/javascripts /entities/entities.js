@@ -257,15 +257,8 @@ game.RogerEntity = me.ObjectEntity.extend({
  
         // Make it Collidable
         this.collidable = true;
-
-        // Set as Enemy
-        //this.type = me.game.ENEMY_OBJECT;
-
-
-        // Initialize HP Counter
-        this.hp = 2;
     }
-    });
+});
 
 
 
@@ -735,140 +728,12 @@ game.LevelEntity = me.LevelEntity.extend({
         }
     }
 });
-game.AlasandraEntity = me.EnemyEntity.extend({
-    init: function(x, y, settings) {
-        // Define this Here Instead of Tiled
-        settings.image = "main-player";
-        settings.spritewidth = 30;
- 
-        // Constructor
-        this.parent(x, y, settings);
-
-        this.setVelocity(5, 15);
-
-
-
-        // Sets Bounds
-        this.startX = x;
-        this.endX = x + settings.width - settings.spritewidth;
- 
-        // Start From Right Bound
-        this.pos.x = x + settings.width - settings.spritewidth;
-        this.walkLeft = true;
- 
-        // Set Speed
-        this.setVelocity(1, 10);
- 
-        // Make it Collidable
-        this.collidable = true;
-
-        // Set as Enemy
-        this.type = me.game.ENEMY_OBJECT;
-
-        
-    },
- 
-    // Do Action Upon Collision
-    onCollision: function(res, obj) {
-        // When Collision Occurs on Top of Enemy
-        if (this.alive && (res.y > 0) && obj.falling) {
-            this.hp -= 0.25;
-            this.renderable.flicker(45);
-        }
-
-        // When Collision Occurs with SHOT Object
-        if(obj.type == 'SHOT') {
-            this.hp -= 0.5;
-            this.renderable.flicker(45);
-        }
-
-        // When Collision Occurs with MELEE Object
-        if(obj.type == 'MELEE') {
-            this.hp--;
-            this.renderable.flicker(45);
-        }
-
-        if(this.hp <= 0) {
-            me.game.remove(this);
-            game.data.score += 250;
-        }
-    },
- 
-    // Manage Enemy Movement
-    update: function() {
-       
-    }
-    game.OtherRogEntity = me.EnemyEntity.extend({
-    init: function(x, y, settings) {
-        // Define this Here Instead of Tiled
-        settings.image = "main-player";
-        settings.spritewidth = 50;
- 
-        // Constructor
-        this.parent(x, y, settings);
-
-        this.setVelocity(5, 15);
-
-
-
-        // Sets Bounds
-        this.startX = x;
-        this.endX = x + settings.width - settings.spritewidth;
- 
-        // Start From Right Bound
-        this.pos.x = x + settings.width - settings.spritewidth;
-        this.walkLeft = true;
- 
-        // Set Speed
-        this.setVelocity(1, 10);
- 
-        // Make it Collidable
-        this.collidable = true;
-
-        // Set as Enemy
-        this.type = me.game.ENEMY_OBJECT;
-
-        
-    },
- 
-    // Do Action Upon Collision
-    onCollision: function(res, obj) {
-        // When Collision Occurs on Top of Enemy
-        if (this.alive && (res.y > 0) && obj.falling) {
-            this.hp -= 0.25;
-            this.renderable.flicker(45);
-        }
-
-        // When Collision Occurs with SHOT Object
-        if(obj.type == 'SHOT') {
-            this.hp -= 0.5;
-            this.renderable.flicker(45);
-        }
-
-        // When Collision Occurs with MELEE Object
-        if(obj.type == 'MELEE') {
-            this.hp--;
-            this.renderable.flicker(45);
-        }
-
-        if(this.hp <= 0) {
-            me.game.remove(this);
-            game.data.score += 250;
-        }
-    },
- 
-    // Manage Enemy Movement
-    update: function() {
-       
-    }
-});
-
 
 // Final Animation Entities
 game.AlasandraEntity = me.ObjectEntity.extend({
     init : function(x, y, settings) {
         settings.image = 'main-player'
-        settings.spritewidth = 30;
+        settings.spritewidth = 100;
 
         this.parent(x,y,settings);
 
@@ -886,6 +751,10 @@ game.AlasandraEntity = me.ObjectEntity.extend({
         // Make it Collidable
         this.collidable = true;
 
+        // Animations
+        this.renderable.addAnimation('walk', [0,1,2]);
+        this.renderable.setCurrentAnimation('walk');
+
         // Set as Enemy
         this.type = 'ALASANDRA';
     },
@@ -893,7 +762,7 @@ game.AlasandraEntity = me.ObjectEntity.extend({
     onCollision : function(res, obj) {
         if(obj.type === 'ROGER') {
             this.vel.x = 0;
-
+            this.accel.x = 0;
             // Find A Way to Add Heart Animation Here.
             // var heart = new HeartEntity();
         }
@@ -948,7 +817,7 @@ game.RogerEntity2 = me.ObjectEntity.extend({
         this.walkLeft = true;
  
         // Set Speed
-        this.setVelocity(1, 10);
+        this.setVelocity(2, 10);
  
         // Make it Collidable
         this.collidable = true;
@@ -960,6 +829,7 @@ game.RogerEntity2 = me.ObjectEntity.extend({
     onCollision : function(res, obj) {
         if(obj.type === 'ALASANDRA') {
             this.vel.x = 0;
+            this.accel.x = 0;
         }
     },
 
