@@ -1,5 +1,7 @@
 # **Revenge: The Revenge**
-***Revenge: The Revenge*** is a browser based, retro, 2D sidescroller built using the [MelonJS Game Engine](http://melonjs.org/).
+***Revenge: The Revenge*** is a retro, sidescrolling platform game that engulfs players in an epic tale of time travel, love, dragons, ninja's, and more!
+
+This browser based game is built using the [MelonJS Game Engine](http://melonjs.org/).
 
 It works through the HTML5 `canvas` element and javascript.
 
