@@ -18,6 +18,13 @@ game.PlayScreen = me.ScreenObject.extend({
 		
 		// Add HUD to Game World
 		me.game.add(new game.HUD.Container());
+
+		// Rebind Keys 
+		me.input.bindKey(me.input.KEY.LEFT,  "left");
+        me.input.bindKey(me.input.KEY.RIGHT, "right");
+        me.input.bindKey(me.input.KEY.UP,     "jump");
+        me.input.bindKey(me.input.KEY.SHIFT,     "shoot");
+        me.input.bindKey(me.input.KEY.ALT,     "melee");
 	},
 	
 	
