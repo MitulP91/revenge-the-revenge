@@ -211,28 +211,22 @@ window.me = window.me || {};
 		}
 	}
 
-	/**
-	 * Specify a function to execute when the DOM is fully loaded
+	
+	 /* Specify a function to execute when the DOM is fully loaded
 	 * @param {Function} handler A function to execute after the DOM is ready.
 	 * @example
 	 * // small main skeleton
 	 * var jsApp	=
 	 * {
 	 *    // Initialize the jsApp
-	 *    // called by the window.onReady function
-	 *    onload: function()
-	 *    {
-	 *       // init video
-	 *       if (!me.video.init('jsapp', 640, 480))
-	 *       {
-	 *          alert("Sorry but your browser does not support html 5 canvas. ");
-	 *          return;
-	 *       }
-	 *
-	 *       // initialize the "audio"
-	 *       me.audio.init("mp3,ogg");
-	 *
-	 *       // set callback for ressources loaded event
+	 */    // called by the window.onReady function
+	   // onload: function(){
+	
+	   //      // initialize the "audio"
+	   //      me.audio.init("mp3,ogg");
+	   //     };
+
+	 /*     // set callback for ressources loaded event
 	 *       me.loader.onload = this.loaded.bind(this);
 	 *
 	 *       // set all ressources to be loaded
@@ -7619,6 +7613,9 @@ window.me = window.me || {};
 
 			// load progress in percent
 			this.loadPercent = 0;
+
+			//music
+			// me.audio.playTrack("DST-InertExponent");
 		},
 		
 		// destroy object at end of loading
@@ -7630,6 +7627,9 @@ window.me = window.me || {};
 				me.event.unsubscribe(this.handle);
 				this.handle = null;
 			}
+
+			 // stop the current audio track
+    		me.audio.stopTrack();
 		},
 
 		// make sure the screen is refreshed every frame 
@@ -8048,6 +8048,8 @@ window.me = window.me || {};
 		 *   {name: "bgmusic", type: "audio",  src: "data/audio/",  channel: 1,  stream: true},
 		 *   {name: "cling",   type: "audio",  src: "data/audio/",  channel: 2},
 		 *   // binary file
+
+
 		 *   {name: "ymTrack", type: "binary", src: "data/audio/main.ym"},
 		 *   // JSON file (used for texturePacker) 
 		 *   {name: "texture", type: "json", src: "data/gfx/texture.json"}
@@ -9228,11 +9230,7 @@ window.me = window.me || {};
 		 * @example
 		 * me.audio.playTrack("awesome_music");
 		 */
-		obj.playTrack = function(sound_id, volume) {
-			current_track = me.audio.play(sound_id, true, null, volume);
-			current_track_id = sound_id.toLowerCase();
-		};
-
+		// someword.tmx
 		/**
 		 * stop the current audio track
 		 * 
