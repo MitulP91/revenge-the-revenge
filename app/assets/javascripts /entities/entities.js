@@ -200,9 +200,9 @@ game.PlayerEntity = me.ObjectEntity.extend({
                  me.input.bindKey(me.input.KEY.UP, 'temp');
                  me.input.unbindKey(me.input.KEY.SHIFT);
                  me.input.unbindKey(me.input.KEY.ALT);
-                setTimeout(function() {
+                //setTimeout(function() {
                     me.state.change(me.state.GAMEOVER);
-                }, 1000);
+                 //}, 300);
                //  me.state.change(me.state.GAMEOVER);
                 
     		}

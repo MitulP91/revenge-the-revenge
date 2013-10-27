@@ -94,7 +94,7 @@ var game = {
         me.state.set(me.state.GAME_END, new game.WinScreen());
 
         // Set Transition Between States
-        me.state.transition("fade", "#FFFFFF", 250);
+        me.state.transition("fade", "#000000", 250);
 
          // Add Player Entity to Entity Pool
         me.entityPool.add("mainPlayer", game.PlayerEntity);
