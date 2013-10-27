@@ -48,14 +48,7 @@ game.resources = [
     // Bullet Sprite
     {name: "bullet",    type:"image", src: "/assets/sprite/shuriken.png"},
 	
-    // // Level2 Tileset
-    // {name: "gta2tiles",  type:"image", src: "/assets/map/gta2tiles.png"},
-    // {name: "kByGF",  type:"image", src: "/assets/map/kByGF.png"},
-    // {name: "parallax_background1",  type:"image", src: "/assets/parallax_background1.png"},
-    // {name: "parallax_background2",  type:"image", src: "/assets/parallax_background2.png"},
-    // {name: "gta2tiles",  type:"image", src: "/assets/map/gta2tiles.png"},
-
-    // Level1 Tileset
+    // Level2 Tileset
     {name: "gta2tiles",  type:"image", src: "/assets/map/gta2tiles.png"},
     {name: "kByGF",  type:"image", src: "/assets/map/kByGF.png"},
     {name: "parallax_background1",  type:"image", src: "/assets/parallax_background1.png"},
@@ -77,7 +70,7 @@ game.resources = [
 	 * {name: "example01", type: "tmx", src: "data/map/example01.json"},
  	 */
  	
- 	{name: "level1",  type:"tmx", src: "/assets/map/level1.tmx"},
+ 	{name: "level2",  type:"tmx", src: "/assets/map/level2.tmx"},
  	{name: "someword", type: "tmx", src: "/assets/map/someword.tmx"},
 
  	// {name: "someword", type: "tmx", src: "/assets/map/someword-test.tmx"},
