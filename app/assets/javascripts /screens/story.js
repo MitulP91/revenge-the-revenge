@@ -12,12 +12,9 @@ game.StoryScreen = me.ScreenObject.extend({
         this.tween = null;
 
 
-		this.scroller = "THE LOVE OF MY LIFE\n\nROGER IS THE SWEETEST\n\n AND SMARTEST OF ALL \n\nMEN. INFACT HE CREATED \n\nTIME TRAVEL......\n\n\n\n UNFORTUNATLEY ROGER HAS \n\nLANDED IN THE HANDS OF\n\n THE EVIL WITCHES \n\n FROM WITCHWORLD AND \n\nIT IS UP TO ME TO \n\nSAVE HIM.\n\n\n\n IT SEEMS AS IF\n\nTHE WITCHES\n\n HAVE TAKEN ROGER \n\nTO A PREHISTORIC\n\n LAND VOID\n\n OF ALL HUMANS....\n\n\n\n\n\n OH NO....\n\n\nWHO IS THAT???\n\n\nNONE OTHER THAN\n\n THE CLONES OF \n\nROGERS EX-GIRLFRIEND \n\nWITH THE STUPIDEST\n\n NAME ROSEFLOWER";
+		this.scroller = "THE LOVE OF MY LIFE\n\nROGER IS THE SWEETEST\n\n AND SMARTEST OF ALL \n\nMEN. IN FACT HE CREATED \n\nTIME TRAVEL......\n\n\n\n UNFORTUNATELY ROGER HAS \n\nLANDED IN THE HANDS OF\n\n THE EVIL WITCHES \n\n FROM WITCHWORLD AND \n\nIT IS UP TO ME TO \n\nSAVE HIM.\n\n\n\n IT SEEMS AS IF\n\nTHE WITCHES\n\n HAVE TAKEN ROGER \n\nTO A PREHISTORIC\n\n LAND VOID\n\n OF ALL HUMANS....\n\n\n\n\n\n OH NO....\n\n\nWHO IS THAT???\n\n\nNONE OTHER THAN\n\n THE CLONES OF \n\nROGERS EX-GIRLFRIEND \n\nWITH THE STUPIDEST\n\n NAME ROSEFLOWER";
 
-
-		
-
-		},
+	},
 
 	
 		// reset function
@@ -37,8 +34,8 @@ game.StoryScreen = me.ScreenObject.extend({
 			this.tween = new me.Tween(this).to({
         	storySize: 0,
         	storyX: 50,
-        	storyY: -20000
-    		}, 250000).start();
+        	storyY: -1450
+    		}, 25000).start();
 
 			// enable the keyboard
         	me.input.bindKey(me.input.KEY.ENTER, "enter", true);
@@ -47,9 +44,11 @@ game.StoryScreen = me.ScreenObject.extend({
 	    // update function
 	    update: function() {
 	    	 // enter pressed ?
-
-	        if (me.input.isKeyPressed('enter')){ //|| this.storyY === -1500) {
-	            me.state.change(me.state.PLAY);
+	    	 // console.log(this.storyY);
+	        if (me.input.isKeyPressed('enter') || this.storyY === -1450) {
+	        	setTimeout(function() {
+	        		me.state.change(me.state.PLAY)
+	        	}, 0);
 	        }
 	        return true;
 	    },

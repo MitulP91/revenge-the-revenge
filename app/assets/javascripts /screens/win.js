@@ -31,16 +31,16 @@ game.WinScreen = me.ScreenObject.extend({
 
 		if(overall_time < 60000) {
 			time_score = 5000;
-		} else if (overall_time < 90000) {
+		} else if (overall_time > 60000 && overall_time < 90000) {
 			time_score = 3500;
-		} else if (overall_time < 120000) {
+		} else if (overall_time > 90000 && overall_time < 120000) {
 			time_score = 2000;
 		} else {
 			time_score = 0;
 		}
 
 		overall_score = game.data.score + time_score;
-
+		
 		// Save User Score
 		saveScore(overall_score);
 
@@ -81,7 +81,7 @@ game.WinScreen = me.ScreenObject.extend({
 
 		this.font.draw(context, "CONGRATULATIONS!", 85, 150);
 		this.font.draw(context, "YOU WON!", 170, 200);
-		this.font.draw(context, "SCORE: " + game.data.score, 140, 270);
+		this.font.draw(context, "SCORE: " + overall_score, 140, 270);
 		this.font.draw(context, "TIME: " + overall_time / 1000 + "s", 115, 320);
 		this.scrollerfont.draw(context, this.scroller, this.scrollerpos, 440);
 	},

@@ -37,8 +37,8 @@ game.TimewarpScreen = me.ScreenObject.extend({
 			this.tween = new me.Tween(this).to({
         	storySize: 0,
         	storyX: 100,
-        	storyY: -1000
-    		}, 17000).start();
+        	storyY: -210
+    		}, 10000).start();
 
 			// enable the keyboard
         	me.input.bindKey(me.input.KEY.ENTER, "enter", true);
@@ -46,14 +46,13 @@ game.TimewarpScreen = me.ScreenObject.extend({
 	 
 	    // update function
 	    update: function() {
-	    	 // enter pressed ?
-	     
-    		 
-	        if (me.input.isKeyPressed('enter')) {
-	            // me.state.change(me.state.PLAY);
-	            me.levelDirector.loadLevel('timetunnel');
-	        }
-	        return true;
+	    	 // enter pressed ?   
+        if (me.input.isKeyPressed('enter') || this.storyY === -210) {
+          setTimeout(function() {
+            me.levelDirector.loadLevel('timetunnel');
+          }, 0);
+        }
+        return true;
 	    },
 	 
 	    // draw function
