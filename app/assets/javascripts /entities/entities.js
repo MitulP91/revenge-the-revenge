@@ -8,7 +8,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
 		this.parent(x,y,settings);
 
 		// Set Vertical/Horizontal Speed
-		this.setVelocity(3, 15);
+		this.setVelocity(5, 15);
 
 		// Set Viewport to Follow Player
 		me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
