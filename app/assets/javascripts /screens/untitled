@@ -1,0 +1,53 @@
+class Card
+	attr_accessor :values, :suits
+
+	def initialize(values, suits)
+
+		@values = values
+		@suits = suits 
+		
+	ends
+
+	
+	def my_card
+		"#{@values} of #{@suits}"
+	end
+
+end
+
+class Deck
+	
+	attr_reader :cards
+
+	def initialize 
+	    @cards = []
+	    values = ['Ace', 2, 3, 4, 5, 6, 7, 8, 9, 'JK', 'Qn', 'Kg']
+		suits = ['Spade', 'Club', 'Heart', 'Diamond']
+	end
+
+	def print_deck
+	  suits.each do |suit| 
+		 values.each do |value|
+		 	@cards << Card.new(value, suit)
+		 end
+	  end
+	end
+
+	def shuffle
+		@cards.shuffle!
+	end
+
+	def deal(num_players = 1, num_card = 5)
+		1.upto(num_players) do |player|
+			my_hand = @cards.pop(num_cards)
+			puts "Player #{player}"
+			puts my_hand
+		end
+	end
+
+end
+
+
+my_deck = Deck.new
+my_deck.shuffle
+my_deck.deal(2)

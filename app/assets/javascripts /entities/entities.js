@@ -39,6 +39,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
         this.renderable.addAnimation('attack', [3,4]);
         this.renderable.addAnimation('stand', [0]);
         this.renderable.addAnimation('jump', [6,7]);
+        this.renderable.addAnimation('die', [8]);
 
         // Set Default Animation
         this.renderable.setCurrentAnimation("walk");
@@ -153,7 +154,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
                 this.jumping = true;
 
                 // Play Sound
-                // me.audio.play("jump");
+                 // me.audio.play("jump");
             }
         }
 
@@ -186,10 +187,30 @@ game.PlayerEntity = me.ObjectEntity.extend({
         }
 
         // Set Gameover if You Fall Through Bottom
-        if(this.pos.y > 460) {
-			me.state.change(me.state.GAMEOVER);
-		}
+        var current_level = me.levelDirector.getCurrentLevelId();
+        
 
+        if(current_level === 'someword') {
+            if(this.pos.y > 285) {
+            
+                this.renderable.setCurrentAnimation('die');
+                 me.input.unbindKey(me.input.KEY.LEFT);
+                 me.input.unbindKey(me.input.KEY.RIGHT);
+                 me.input.unbindKey(me.input.KEY.UP);
+                 me.input.bindKey(me.input.KEY.UP, 'temp');
+                 me.input.unbindKey(me.input.KEY.SHIFT);
+                 me.input.unbindKey(me.input.KEY.ALT);
+                setTimeout(function() {
+                    me.state.change(me.state.GAMEOVER);
+                }, 1000);
+               //  me.state.change(me.state.GAMEOVER);
+                
+    		}
+        }
+
+        if(this.pos.y > 460) {
+                me.state.change(me.state.GAMEOVER);
+        }
         // Check and Update Player Movement
         this.updateMovement();
 
@@ -207,7 +228,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
 				  this.jumping = true;
 
 				  // play some audio
-				  // me.audio.play("stomp");
+				   // me.audio.play("stomp");
 			   } else {
 				  // Flicker if Hit by Enemy
 				  this.renderable.flicker(45);
@@ -231,6 +252,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
 				  }
 			   }
 			}
+
 		}
 		
         // Check if Animation Update is Needed 
@@ -261,6 +283,7 @@ game.CoinEntity = me.CollectableEntity.extend({
 		if(obj.type == 'PLAYER') {
 			// Play Sound
 			// me.audio.play("cling");
+            
 
 			// Increment HUD Score
 			game.data.score += 250;
