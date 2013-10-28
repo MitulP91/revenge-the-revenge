@@ -780,7 +780,12 @@ game.LevelEntity = me.LevelEntity.extend({
         	if(current_level === 'level2') {
         		me.state.change(me.state.CHINA);
         	} else if(current_level === 'someword') {
-        		me.state.change(me.state.TIMEWARP);
+                 me.input.bindKey(me.input.KEY.LEFT,  "left");
+                 me.input.bindKey(me.input.KEY.RIGHT, "right");
+                 me.input.bindKey(me.input.KEY.UP,     "jump");
+                 me.input.bindKey(me.input.KEY.SHIFT,     "shoot");
+                 me.input.bindKey(me.input.KEY.ALT,     "melee");
+        		 me.state.change(me.state.TIMEWARP);
         	} else if(current_level === 'timetunnel') {
         		me.state.change(me.state.ROGER);
         	} 

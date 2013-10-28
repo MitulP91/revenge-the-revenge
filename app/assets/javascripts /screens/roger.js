@@ -11,7 +11,7 @@ game.RogerScreen = me.ScreenObject.extend({
         this.tween = null;
 
 
-		this.scroller = "I DEFEATED THE\n\n\nEVIL WITCHES FROM\n\n\nWITCHWORLD AND SAVED\n\n\n MY BELOVED ROGER!";
+		this.scroller = "I DEFEATED THE\n\nEVIL WITCHES FROM\n\nWITCHWORLD AND SAVED\n\n MY BELOVED ROGER!\n\n NOW THAT WE HAVE\n\n PERFECTED THE ART OF\n\n TIME TRAVEL, \n\nIM GETTING MYSELF \n\nA PET DINOSAUR AND \n\nMAKING SURE ROSEFLOWER\n\n WAS NEVER BORN";
 		},
 
 		// reset function
@@ -32,7 +32,7 @@ game.RogerScreen = me.ScreenObject.extend({
         	storySize: 0,
         	storyX: 100,
         	storyY: -300
-    		}, 11000).start();
+    		}, 12000).start();
 
 			// enable the keyboard
         	me.input.bindKey(me.input.KEY.ENTER, "enter", true);

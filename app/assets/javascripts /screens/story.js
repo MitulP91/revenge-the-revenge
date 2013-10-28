@@ -12,7 +12,7 @@ game.StoryScreen = me.ScreenObject.extend({
         this.tween = null;
 
 
-		this.scroller = "THE LOVE OF MY LIFE\n\nROGER IS THE SWEETEST\n\n AND SMARTEST OF ALL \n\nMEN. IN FACT HE CREATED \n\nTIME TRAVEL......\n\n\n\n UNFORTUNATELY ROGER HAS \n\nLANDED IN THE HANDS OF\n\n THE EVIL WITCHES \n\n FROM WITCHWORLD AND \n\nIT IS UP TO ME TO \n\nSAVE HIM.\n\n\n\n IT SEEMS AS IF\n\nTHE WITCHES\n\n HAVE TAKEN ROGER \n\nTO A PREHISTORIC\n\n LAND VOID\n\n OF ALL HUMANS....\n\n\n\n\n\n OH NO....\n\n\nWHO IS THAT???\n\n\nNONE OTHER THAN\n\n THE CLONES OF \n\nROGERS EX-GIRLFRIEND \n\nWITH THE STUPIDEST\n\n NAME ROSEFLOWER";
+		this.scroller = "HI MY NAME IS\n\n ALASANDRA AND I AM \n\n IN QUITE THE PICKLE\n\n THE LOVE OF MY LIFE\n\nROGER IS THE SWEETEST\n\n AND SMARTEST OF ALL \n\nMEN. IN FACT HE CREATED \n\nTIME TRAVEL......\n\n\n\n UNFORTUNATELY ROGER HAS \n\nLANDED IN THE HANDS OF\n\n THE EVIL WITCHES \n\n FROM WITCHWORLD AND \n\nIT IS UP TO ME TO \n\nSAVE HIM.\n\n\n\n IT SEEMS AS IF\n\nTHE WITCHES\n\n HAVE TAKEN ROGER \n\nTO A PREHISTORIC\n\n LAND VOID\n\n OF ALL HUMANS....\n\n\n\n\n\n OH NO....\n\n\nWHO IS THAT???\n\n\nNONE OTHER THAN\n\n THE CLONES OF \n\nROGERS EX-GIRLFRIEND \n\nWITH THE STUPIDEST\n\n NAME ROSEFLOWER";
 
 	},
 
@@ -35,7 +35,7 @@ game.StoryScreen = me.ScreenObject.extend({
         	storySize: 0,
         	storyX: 50,
         	storyY: -1450
-    		}, 25000).start();
+    		}, 26700).start();
 
 			// enable the keyboard
         	me.input.bindKey(me.input.KEY.ENTER, "enter", true);
