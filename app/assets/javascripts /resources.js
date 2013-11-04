@@ -18,8 +18,8 @@ game.resources = [
     {name: "main-player",     type:"image", src: "/assets/sprite/main-player.png"},
 
     // Parallax Backgrounds
-    {name: "great_wall_2",  type:"image", src: "/assets/great_wall_2.png"},
-    {name: "time_tunnel",  type:"image", src: "/assets/Time_Tunnel.png"},
+    {name: "chinawall",  type:"image", src: "/assets/chinawall.png"},
+    {name: "black",  type:"image", src: "/assets/black.png"},
 
 
     // Title Screen Background
